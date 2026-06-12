@@ -1,0 +1,14 @@
+{
+  "name": "ActivaWeb",
+  "short_name": "ActivaWeb",
+  "description": "Diseño web profesional, tiendas online, hosting, correos y SEO base en Chile.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071B3A",
+  "theme_color": "#071B3A",
+  "lang": "es-CL",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
