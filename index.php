@@ -1,53 +1,3 @@
-<?php
-$formStatus = null;
-$formMessage = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form'])) {
-  $clean = static function ($value) {
-    return trim(str_replace(["\r", "\n"], ' ', (string) $value));
-  };
-
-  $nombre = $clean($_POST['nombre'] ?? '');
-  $empresa = $clean($_POST['empresa'] ?? 'No indicada');
-  $telefono = $clean($_POST['telefono'] ?? '');
-  $correo = filter_var(trim((string) ($_POST['correo'] ?? '')), FILTER_SANITIZE_EMAIL);
-  $servicios = $clean($_POST['servicios'] ?? '');
-  $presupuesto = $clean($_POST['presupuesto'] ?? 'Por definir');
-  $plazo = $clean($_POST['plazo'] ?? 'Sin urgencia');
-  $mensaje = trim((string) ($_POST['mensaje'] ?? ''));
-
-  if ($nombre === '' || $telefono === '' || $servicios === '' || $mensaje === '') {
-    $formStatus = 'error';
-    $formMessage = 'Por favor completa nombre, teléfono, servicio y detalle del proyecto.';
-  } else {
-    $to = 'erwin.2785@gmail.com, contact@activa-web.cl';
-    $subject = 'Nueva cotización web desde Activa Web';
-    $body = "Nueva solicitud desde activa-web.cl\n\n" .
-      "Nombre: {$nombre}\n" .
-      "Empresa: {$empresa}\n" .
-      "Teléfono: {$telefono}\n" .
-      "Correo: " . ($correo !== '' ? $correo : 'No indicado') . "\n" .
-      "Servicio: {$servicios}\n" .
-      "Presupuesto: {$presupuesto}\n" .
-      "Plazo: {$plazo}\n\n" .
-      "Detalle del proyecto:\n{$mensaje}\n";
-    $headers = [
-      'MIME-Version: 1.0',
-      'Content-Type: text/plain; charset=UTF-8',
-      'From: Activa Web <contact@activa-web.cl>',
-      'Reply-To: ' . ($correo !== '' && filter_var($correo, FILTER_VALIDATE_EMAIL) ? $correo : 'contact@activa-web.cl'),
-    ];
-
-    if (mail($to, $subject, $body, implode("\r\n", $headers))) {
-      $formStatus = 'success';
-      $formMessage = 'Gracias. Recibimos tu solicitud y también puedes continuar por WhatsApp si necesitas una respuesta más rápida.';
-    } else {
-      $formStatus = 'error';
-      $formMessage = 'No pudimos enviar el correo desde el servidor. Escríbenos a contact@activa-web.cl o por WhatsApp y revisaremos tu proyecto.';
-    }
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="es-CL">
 <head>
@@ -92,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
         "image": "https://activa-web.cl/imagenes/10.png",
         "description": "Empresa de desarrollo web en Chile especializada en diseño de páginas web profesionales, tiendas online, ecommerce, landing pages, web corporativa, mejoras web y SEO base.",
         "telephone": "+56952157840",
-        "email": "contact@activa-web.cl",
+        "email": "contacto@activa-web.cl",
         "priceRange": "$$",
         "areaServed": {
           "@type": "Country",
@@ -280,10 +230,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(223,231,241,.86);
     }
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative}
     .brand{display:flex;align-items:center;gap:12px;min-width:max-content}
     .brand-logo{width:228px;height:auto}
-    .nav-links{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:780;color:#334155}
+    .nav-links{display:flex;align-items:center;gap:18px;font-size:12.5px;font-weight:760;color:#334155;white-space:nowrap}
     .nav-links a:hover{color:var(--blue)}
     .mobile-toggle{display:none;border:0;background:#eef4fc;color:var(--navy);width:44px;height:44px;border-radius:11px;font-size:22px}
     .hero{
@@ -455,16 +405,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     .band-card{max-width:430px;justify-self:end;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:22px;box-shadow:0 22px 70px rgba(0,0,0,.22);backdrop-filter:blur(10px)}
     .band-card b{display:block;color:#fff;font-size:18px;margin-bottom:8px}
     .band-card span{display:block;color:#d8e5f7;font-size:13px}
-    .portfolio-section{
-      position:relative;
-      overflow:hidden;
-      background:
-        linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,250,255,.97)),
-        url('imagenes/1.png') center/cover fixed;
-    }
-    .portfolio-section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 12%,rgba(18,103,241,.11),transparent 28%),radial-gradient(circle at 8% 70%,rgba(22,185,120,.09),transparent 28%);pointer-events:none}
-    .portfolio-section .container{position:relative;z-index:1}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
     .work{overflow:hidden;transition:.22s ease;display:flex;flex-direction:column}
     .work-screen{height:176px;background:linear-gradient(135deg,#061a3d,#1267f1);padding:10px;position:relative;overflow:hidden}
     .work-screen:after{content:"";position:absolute;right:-38px;top:-38px;width:130px;height:130px;border-radius:50%;background:rgba(22,185,120,.32)}
@@ -500,9 +441,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     .contact-item svg{width:20px;height:20px;stroke:var(--blue);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:2px}
     .contact-item b{display:block;color:var(--navy);font-size:13px}
     .contact-item span,.contact-item a{font-size:13px;color:#536071;margin-top:2px;display:block}
-    .form-alert{margin-bottom:16px;border-radius:12px;padding:13px 14px;font-size:13px;font-weight:760;border:1px solid}
-    .form-alert.success{background:#e9fbf3;border-color:#bdebd6;color:#0f7a51}
-    .form-alert.error{background:#fff5f5;border-color:#ffd2d2;color:#9f1d1d}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .field{display:grid;gap:7px}
     .field.full{grid-column:1/-1}
@@ -546,6 +484,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;color:#a8b6c8}
     .whatsapp{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--green);color:#fff;box-shadow:0 18px 40px rgba(22,185,120,.32)}
     .whatsapp svg{width:28px;height:28px;fill:currentColor}
+
 
     /* Sección mejorada: confianza, servicios y proceso Activa Web */
     .trust-flow-section{
@@ -705,6 +644,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     .trust-cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
     .trust-cta .btn{min-height:42px;padding:0 16px;border-radius:9px;font-size:13px;font-weight:700}
 
+
+    @media(max-width:1120px) and (min-width:981px){
+      .brand-logo{width:190px}
+      .nav-links{gap:13px;font-size:12px}
+      .nav>.btn{padding:0 13px;font-size:12px}
+    }
+
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       .hero-slide,.hero-slide img{animation:none}
@@ -715,14 +661,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     @media(max-width:980px){
       .nav-links{display:none}
       .mobile-toggle{display:block}
-      .nav.open .nav-links{display:flex;position:absolute;left:20px;right:20px;top:84px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}
-      .nav.open .nav-links a{padding:10px 2px}
+      .nav.open .nav-links{display:flex;position:absolute;left:0;right:0;top:84px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;flex-direction:column;align-items:stretch;gap:4px;box-shadow:var(--shadow);max-height:calc(100vh - 110px);overflow:auto}
+      .nav.open .nav-links a{padding:12px 12px;border-radius:10px;font-size:14px}.nav.open .nav-links a:hover{background:#f4f8ff}
       .hero-grid,.faq-grid,.contact-layout,.seo-band{grid-template-columns:1fr}
       .keyword-cloud{justify-content:flex-start}
       .cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid{grid-template-columns:1fr 1fr}
-      .portfolio-panel{grid-template-columns:1fr;padding:22px}
-      .portfolio-slider{height:auto}
-      .portfolio-panel img{height:190px}
       .plan.featured{transform:none}
       .section-head{display:block}
       .section-head p{margin-top:12px}
@@ -737,7 +680,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       .nav{height:66px;gap:10px}
       .brand-logo{width:168px}
       .nav>.btn{display:none}
-      .nav.open .nav-links{left:14px;right:14px;top:74px}
+      .nav.open .nav-links{left:0;right:0;top:72px}
       .hero{padding:44px 0 38px}
       h1{font-size:clamp(28px,8.4vw,35px);line-height:1.1;font-weight:760}
       .lead{font-size:15px;line-height:1.65}
@@ -751,9 +694,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       .price strong{font-size:31px}
       .visual-card{border-radius:20px;padding:10px}
       .hero-slider{height:238px}
-      .portfolio-track{animation:none;width:100%;display:grid}
-      .portfolio-panel{width:100%;min-height:380px}
-      .portfolio-panel:not(:first-child){display:none}
       .visual-caption{display:block;padding:14px 2px 0}
       .visual-caption .btn,.closing-box .btn{margin-top:12px;width:100%;min-height:46px}
       .step{grid-template-columns:1fr;padding:20px}
@@ -780,6 +720,332 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       .trust-services-grid{grid-template-columns:1fr}
       .trust-cta .btn{width:100%;justify-content:center;min-height:46px}
     }
+  
+
+    /* Responsive reforzado: sección "Qué recibe el cliente" */
+    .deliverables{
+      overflow:hidden;
+    }
+    .deliverables .section-head{
+      align-items:flex-start;
+      margin-bottom:28px;
+    }
+    .deliverables .section-head p{
+      font-size:14px;
+      line-height:1.7;
+    }
+    .deliverables-grid{
+      grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+      gap:16px;
+      width:100%;
+    }
+    .deliverable{
+      position:relative;
+      min-width:0;
+      height:100%;
+      padding:22px 20px 22px 58px;
+      border-radius:18px;
+      overflow:hidden;
+      overflow-wrap:anywhere;
+    }
+    .deliverable:before{
+      content:"";
+      position:absolute;
+      left:20px;
+      top:22px;
+      width:22px;
+      height:22px;
+      border-radius:8px;
+      background:linear-gradient(135deg,var(--blue),var(--blue-2));
+      box-shadow:0 10px 22px rgba(18,103,241,.18);
+    }
+    .deliverable:after{
+      content:"✓";
+      position:absolute;
+      left:26px;
+      top:22px;
+      color:#fff;
+      font-size:13px;
+      font-weight:900;
+      line-height:22px;
+    }
+    .deliverable strong{
+      font-size:14.5px;
+      line-height:1.35;
+      margin-bottom:7px;
+      padding-right:4px;
+    }
+    .deliverable p{
+      font-size:13px;
+      line-height:1.65;
+      margin:0;
+    }
+    .closing-box{
+      flex-wrap:wrap;
+    }
+    .closing-box > div{
+      min-width:0;
+      flex:1 1 560px;
+    }
+    .closing-box .btn{
+      white-space:normal;
+      text-align:center;
+    }
+
+    @media(max-width:760px){
+      .deliverables .section-head{
+        margin-bottom:22px;
+      }
+      .deliverables .section-head h2{
+        font-size:clamp(22px,7vw,28px);
+        line-height:1.14;
+      }
+      .deliverables .section-head p{
+        margin-top:10px;
+      }
+      .deliverables-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+        margin-top:22px;
+      }
+      .deliverable{
+        padding:18px 16px 18px 54px;
+        border-radius:16px;
+      }
+      .deliverable:before{
+        left:18px;
+        top:20px;
+        width:20px;
+        height:20px;
+        border-radius:7px;
+      }
+      .deliverable:after{
+        left:23px;
+        top:19px;
+        font-size:12px;
+        line-height:20px;
+      }
+      .deliverable strong{
+        font-size:14px;
+      }
+      .deliverable p{
+        font-size:12.8px;
+        line-height:1.62;
+      }
+      .closing-box{
+        display:block;
+        margin-top:22px;
+        padding:22px;
+        border-radius:18px;
+      }
+      .closing-box h3{
+        font-size:18px;
+        line-height:1.25;
+      }
+      .closing-box p{
+        font-size:13px;
+        line-height:1.65;
+      }
+      .closing-box .btn{
+        width:100%;
+        margin-top:16px;
+        min-height:46px;
+        justify-content:center;
+      }
+    }
+
+    @media(max-width:380px){
+      .deliverable{
+        padding:17px 14px 17px 48px;
+      }
+      .deliverable:before{
+        left:15px;
+      }
+      .deliverable:after{
+        left:20px;
+      }
+    }
+
+  
+
+    /* Hero tipo video corporativo - Activa Web */
+    .hero.hero-video{
+      position:relative;
+      min-height:590px;
+      padding:118px 0 106px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:#061a3d;
+      isolation:isolate;
+    }
+    .hero-bg-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-3;
+      filter:saturate(1.04) contrast(1.05) brightness(.72);
+    }
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(circle at 50% 18%,rgba(22,185,120,.22),transparent 26%),
+        radial-gradient(circle at 72% 34%,rgba(18,103,241,.28),transparent 30%),
+        linear-gradient(180deg,rgba(6,26,61,.78) 0%,rgba(6,26,61,.86) 48%,rgba(6,26,61,.94) 100%);
+    }
+    .hero-overlay:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:radial-gradient(rgba(255,255,255,.13) 1px,transparent 1px);
+      background-size:26px 26px;
+      opacity:.18;
+      mask-image:linear-gradient(180deg,#000,transparent 88%);
+    }
+    .hero-centered{
+      position:relative;
+      z-index:1;
+      display:flex;
+      justify-content:center;
+      text-align:center;
+    }
+    .hero-content{
+      width:min(850px,100%);
+      margin-inline:auto;
+    }
+    .hero-pill{
+      margin-inline:auto 0;
+      margin-left:auto;
+      margin-right:auto;
+      color:#dff7ee;
+      background:rgba(255,255,255,.08);
+      border-color:rgba(22,185,120,.42);
+      box-shadow:0 16px 42px rgba(0,0,0,.16);
+      backdrop-filter:blur(10px);
+    }
+    .hero-pill b{color:#6df0ba}
+    .hero-pill span{color:#eef6ff}
+    .hero-video h1{
+      margin:20px auto 0;
+      max-width:820px;
+      color:#fff;
+      font-size:clamp(31px,4.15vw,52px);
+      line-height:1.10;
+      font-weight:650;
+      letter-spacing:-.036em;
+      text-wrap:balance;
+    }
+    .hero-video h1::after{
+      content:"";
+      display:block;
+      width:72px;
+      height:3px;
+      margin:22px auto 0;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--green),#69f1ff,var(--blue));
+    }
+    .hero-lead{
+      max-width:760px;
+      margin:20px auto 0;
+      color:#edf5ff;
+      font-size:clamp(15px,1.35vw,18px);
+      line-height:1.72;
+      text-wrap:balance;
+    }
+    .hero-actions-centered{
+      justify-content:center;
+      margin-top:34px;
+    }
+    .hero-main-btn{
+      min-height:52px;
+      padding:0 28px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--green),#38d894);
+      color:#061a3d;
+      box-shadow:0 18px 42px rgba(22,185,120,.26);
+      font-weight:820;
+    }
+    .hero-outline-btn{
+      min-height:52px;
+      padding:0 28px;
+      border-radius:999px;
+      border-color:rgba(255,255,255,.38);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      backdrop-filter:blur(8px);
+      font-weight:780;
+    }
+    .hero-outline-btn:hover{
+      background:rgba(255,255,255,.12);
+      border-color:rgba(255,255,255,.58);
+      color:#fff;
+    }
+    .hero-meta-centered{
+      justify-content:center;
+      margin-top:26px;
+      color:#d9e7f8;
+      gap:18px;
+    }
+    .hero-meta-centered span:before{
+      background:#6df0ba;
+      box-shadow:0 0 0 4px rgba(109,240,186,.12);
+    }
+    .hero-video + .stats{
+      margin-top:-34px;
+    }
+
+    @media(max-width:980px){
+      .hero.hero-video{
+        min-height:560px;
+        padding:98px 0 86px;
+      }
+      .hero-video h1{
+        font-size:clamp(30px,6.2vw,44px);
+        font-weight:650;
+        line-height:1.10;
+      }
+    }
+    @media(max-width:640px){
+      .hero.hero-video{
+        min-height:560px;
+        padding:82px 0 76px;
+      }
+      .hero-video h1{
+        font-size:clamp(28px,8.8vw,38px);
+        line-height:1.12;
+        font-weight:640;
+        letter-spacing:-.032em;
+      }
+      .hero-lead{
+        font-size:15px;
+        line-height:1.64;
+      }
+      .hero-actions-centered .btn{
+        width:100%;
+        min-height:50px;
+      }
+      .hero-meta-centered{
+        justify-content:flex-start;
+        text-align:left;
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+        width:max-content;
+        max-width:100%;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .hero-pill{
+        width:100%;
+        justify-content:center;
+        border-radius:999px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -796,12 +1062,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
         <img class="brand-logo" src="logo/logo.png" alt="Activa Web - desarrollo web profesional en Chile" width="1536" height="511" fetchpriority="high">
       </a>
       <nav class="nav-links" aria-label="Menú principal">
+        <a href="#inicio">Inicio</a>
         <a href="#planes">Planes</a>
         <a href="#portafolio">Portafolio</a>
-        <a href="#servicios">Servicios</a>
         <a href="#entregables">Entregables</a>
         <a href="#proceso">Proceso</a>
-        <a href="#confianza">Confianza</a>
+        <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20o%20tienda%20online" target="_blank" rel="noopener">Cotizar web</a>
@@ -810,37 +1076,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="promo-pill"><b>50% de descuento</b> en planes web profesionales</div>
-          <h1>Activa tu presencia web con confianza.</h1>
-          <p class="lead">En Activa Web desarrollamos páginas web, tiendas online y soluciones digitales para empresas en Chile que quieren verse profesionales, explicar mejor su valor y recibir más consultas reales.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener">Quiero una propuesta</a>
-            <a class="btn btn-ghost" href="#planes">Ver planes</a>
+    <section class="hero hero-video" id="inicio" aria-label="Inicio Activa Web desarrollo web en Chile">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="imagenes/10.png" aria-hidden="true">
+        <source src="video/fondo.mov" type="video/quicktime">
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-centered">
+        <div class="hero-content">
+          <div class="promo-pill hero-pill"><b>50% de descuento</b><span>en sitios web y tiendas online</span></div>
+          <h1>Desarrollo web profesional para empresas que quieren crecer.</h1>
+          <p class="lead hero-lead">Creamos páginas web, ecommerce y sitios corporativos en Chile con diseño limpio, estructura SEO y acompañamiento real para que tu empresa se vea confiable y reciba más consultas.</p>
+          <div class="hero-actions hero-actions-centered">
+            <a class="btn btn-primary hero-main-btn" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener">Cotizar mi proyecto</a>
+            <a class="btn btn-outline hero-outline-btn" href="#planes">Ver planes y ofertas</a>
           </div>
-          <div class="hero-meta">
+          <div class="hero-meta hero-meta-centered">
             <span>Diseño web profesional</span>
-            <span>Hosting y dominio</span>
+            <span>Tiendas online</span>
             <span>SEO base</span>
-            <span>Soporte técnico</span>
-          </div>
-        </div>
-
-        <div class="visual-card" aria-label="Vista previa de diseño web profesional">
-          <div class="hero-slider" aria-hidden="true">
-            <div class="hero-slide"><img src="imagenes/10.png" alt="Diseño web profesional para empresas en Chile" width="1672" height="941" fetchpriority="high"></div>
-            <div class="hero-slide"><img src="imagenes/5.png" alt="Página web corporativa moderna para servicios" width="1672" height="941" loading="lazy"></div>
-            <div class="hero-slide"><img src="imagenes/4.png" alt="Tienda online ecommerce desarrollada en Chile" width="1672" height="941" loading="lazy"></div>
-            <div class="hero-slide"><img src="imagenes/8.png" alt="Landing page optimizada para captar clientes" width="1672" height="941" loading="lazy"></div>
-          </div>
-          <div class="visual-caption">
-            <div>
-              <b>Diseño sobrio, claro y comercial</b>
-              <span>Una experiencia pensada para que el visitante entienda, confíe y decida contactarte.</span>
-            </div>
-            <a class="btn btn-dark" href="#contacto">Solicitar evaluación</a>
+            <span>Soporte y capacitación</span>
           </div>
         </div>
       </div>
@@ -856,6 +1110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     </div>
 
 
+    
 
     <section class="section alt" id="planes">
       <div class="container">
@@ -898,21 +1153,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
     </section>
 
-    <section class="section why" id="confianza">
-      <div class="container">
-        <span class="eyebrow">Por qué elegir Activa Web</span>
-        <h2>Más que una página: una presencia digital confiable.</h2>
-        <p class="lead">Activa Web combina diseño profesional, contenido comercial, estructura SEO y soporte cercano para que el cliente sienta que su proyecto está en buenas manos.</p>
-        <div class="why-grid">
-          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"/></svg></div><h3>Confianza visual</h3><p>Diseño sobrio, limpio y corporativo para que la marca se vea seria desde el primer vistazo.</p></div>
-          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M7 15l4-4 3 3 5-7"/></svg></div><h3>Enfoque comercial</h3><p>Textos, botones y recorridos pensados para que el visitante entienda, confíe y consulte.</p></div>
-          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></div><h3>Claridad total</h3><p>Planes, proceso, entregables y preguntas frecuentes explicados de forma simple y directa.</p></div>
-          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Soporte cercano</h3><p>Acompañamiento inicial, revisión y capacitación para que el cliente no quede a la deriva.</p></div>
+
+    <section class="image-band" aria-label="Diseño web corporativo profesional">
+      <div class="container band-grid">
+        <div>
+          <span class="eyebrow">Imagen profesional</span>
+          <h2>Diseño corporativo que transmite seriedad.</h2>
+          <p class="lead">Una web profesional no solo debe verse bien: debe explicar con claridad, cargar rápido, guiar al usuario y facilitar el contacto desde cualquier dispositivo.</p>
+        </div>
+        <div class="band-card">
+          <b>Menos ruido, más conversión</b>
+          <span>Jerarquía clara, colores sobrios, botones visibles, textos directos y secciones pensadas para convertir visitas en oportunidades.</span>
         </div>
       </div>
     </section>
 
-    <section class="section portfolio-section" id="portafolio">
+
+    <section class="section" id="portafolio">
       <div class="container">
         <div class="section-head">
           <div>
@@ -931,105 +1188,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
           <article class="work"><a class="work-screen" href="https://solucionemprendedor.cl/" target="_blank" rel="noopener"><img src="portafolio/7.png" alt="Sitio web Solución Emprendedor contabilidad" loading="lazy"></a><div class="work-body"><span>Contabilidad</span><h3>Solución Emprendedor</h3><p>Servicio contable y tributario para emprendedores que necesitan ordenar su gestión financiera.</p><a class="work-link" href="https://solucionemprendedor.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
           <article class="work"><a class="work-screen" href="https://surma.cl/" target="_blank" rel="noopener"><img src="portafolio/8.png" alt="Ecommerce SURMA tienda online" loading="lazy"></a><div class="work-body"><span>E-commerce</span><h3>SURMA</h3><p>Tienda online de electrodomésticos con enfoque en venta digital, productos y experiencia comercial.</p><a class="work-link" href="https://surma.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
         </div>
-        <div class="portfolio-grid">
-          <article class="work"><a class="work-screen" href="https://adlinks.cl/" target="_blank" rel="noopener"><img src="portafolio/1.png" alt="Página web de marketing digital AdLinks" loading="lazy"></a><div class="work-body"><span>Marketing digital</span><h3>AdLinks</h3><p>Agencia de marketing digital con diseño web, redes sociales, producción audiovisual y posicionamiento SEO para pymes.</p><a class="work-link" href="https://adlinks.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="https://clubossandon.cl/" target="_blank" rel="noopener"><img src="portafolio/2.png" alt="Página web Club Ossandón" loading="lazy"></a><div class="work-body"><span>Club deportivo</span><h3>Club Ossandón</h3><p>Sitio para club deportivo orientado al entrenamiento, tenis, gimnasio, boxeo, bienestar y vida saludable.</p><a class="work-link" href="https://clubossandon.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="https://contrerasystevens.cl/" target="_blank" rel="noopener"><img src="portafolio/3.png" alt="Web corporativa estudio jurídico Contreras y Stevens" loading="lazy"></a><div class="work-body"><span>Estudio jurídico</span><h3>Contreras &amp; Stevens</h3><p>Web de firma legal con estructura corporativa, servicios, equipo profesional y contacto directo para consultas.</p><a class="work-link" href="https://contrerasystevens.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="http://metrikalab.cl/" target="_blank" rel="noopener"><img src="portafolio/4.png" alt="Página web consultora MetrikaLab" loading="lazy"></a><div class="work-body"><span>Consultoría</span><h3>MetrikaLab</h3><p>Consultora estratégica enfocada en transformar datos, tendencias y percepciones en soluciones accionables.</p><a class="work-link" href="http://metrikalab.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="https://palermovestidos.cl/" target="_blank" rel="noopener"><img src="portafolio/5.png" alt="Tienda online Palermo Vestidos" loading="lazy"></a><div class="work-body"><span>Moda y retail</span><h3>Palermo Vestidos</h3><p>Tienda especializada en vestidos de novia, fiesta y gala, con enfoque visual y asesoría personalizada.</p><a class="work-link" href="https://palermovestidos.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="http://panalconstrucciones.cl/" target="_blank" rel="noopener"><img src="portafolio/6.png" alt="Web corporativa Panal Construcciones" loading="lazy"></a><div class="work-body"><span>Construcción</span><h3>Panal Construcciones</h3><p>Empresa constructora con servicios de galpones, viviendas, remodelaciones, obras civiles y estructuras metálicas.</p><a class="work-link" href="http://panalconstrucciones.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="https://solucionemprendedor.cl/" target="_blank" rel="noopener"><img src="portafolio/7.png" alt="Sitio web Solución Emprendedor contabilidad" loading="lazy"></a><div class="work-body"><span>Contabilidad</span><h3>Solución Emprendedor</h3><p>Servicio contable y tributario para emprendedores que necesitan ordenar su gestión financiera.</p><a class="work-link" href="https://solucionemprendedor.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-          <article class="work"><a class="work-screen" href="https://surma.cl/" target="_blank" rel="noopener"><img src="portafolio/8.png" alt="Ecommerce SURMA tienda online" loading="lazy"></a><div class="work-body"><span>E-commerce</span><h3>SURMA</h3><p>Tienda online de electrodomésticos con enfoque en venta digital, productos y experiencia comercial.</p><a class="work-link" href="https://surma.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
-        </div>
       </div>
     </section>
-
-
-
-
-       <section class="image-band" aria-label="Diseño web corporativo profesional">
-      <div class="container band-grid">
-        <div>
-          <span class="eyebrow">Imagen profesional</span>
-          <h2>Diseño corporativo que transmite seriedad.</h2>
-          <p class="lead">Una web profesional no solo debe verse bien: debe explicar con claridad, cargar rápido, guiar al usuario y facilitar el contacto desde cualquier dispositivo.</p>
-        </div>
-        <div class="band-card">
-          <b>Menos ruido, más conversión</b>
-          <span>Jerarquía clara, colores sobrios, botones visibles, textos directos y secciones pensadas para convertir visitas en oportunidades.</span>
-        </div>
-      </div>
-    </section>
-
-
 
     
-
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Servicios Activa Web</span>
-            <h2>Servicios digitales para crear, vender y sostener tu presencia online.</h2>
-          </div>
-          <p>Tomamos la línea de servicios de desarrollo web, diseño creativo digital y soporte técnico, adaptándola a Activa Web con un enfoque más claro: que el cliente vea una empresa seria, entienda qué recibirá y se sienta seguro de avanzar.</p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div class="icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div>
-            <h3>Diseño web y creación de páginas</h3>
-            <p>Desarrollamos páginas web modernas, claras y optimizadas para empresas que necesitan mostrar sus servicios, generar confianza y aparecer mejor en Google.</p>
-            <ul><li>Web informativa y corporativa</li><li>Diseño responsive para celular y tablet</li><li>Estructura comercial por secciones</li><li>Botones de contacto y WhatsApp</li></ul>
-          </article>
-
-          <article class="card">
-            <div class="icon green"><svg viewBox="0 0 24 24"><path d="M6 6h15l-2 9H8L6 6Z"/><path d="M6 6 5 3H3"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></div>
-            <h3>Tiendas online y ecommerce</h3>
-            <p>Creamos tiendas online para vender desde el primer día, con catálogo, carrito, pedidos, pagos, envíos y administración simple para el cliente.</p>
-            <ul><li>Gestión de productos y pedidos</li><li>Carrito de compras</li><li>Métodos de pago integrados</li><li>Métodos de envío configurados</li></ul>
-          </article>
-
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><path d="M17 16l2 2"/></svg></div>
-            <h3>Diseño creativo digital</h3>
-            <p>Potenciamos la imagen visual de tu marca con recursos digitales coherentes: banners, gráficas, identidad visual básica y piezas para reforzar tu presencia online.</p>
-            <ul><li>Banners para sitio web</li><li>Recursos gráficos corporativos</li><li>Diseño visual de secciones</li><li>Imagen digital consistente</li></ul>
-          </article>
-
-          <article class="card">
-            <div class="icon blue"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"/><path d="m9 12 2 2 4-5"/></svg></div>
-            <h3>Soporte técnico para empresas</h3>
-            <p>Entregamos soporte remoto, mantenimiento web, corrección de errores y mejoras para que tu página se mantenga segura, actualizada y funcionando.</p>
-            <ul><li>Mantención web</li><li>Corrección de errores</li><li>Actualización de contenidos</li><li>Soporte remoto personalizado</li></ul>
-          </article>
-
-          <article class="card">
-            <div class="icon green"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
-            <h3>Hosting, dominio y correos</h3>
-            <p>Configuramos la base técnica para que la empresa opere formalmente: dominio, hosting, certificado SSL, correos corporativos y accesos principales.</p>
-            <ul><li>Dominio y hosting</li><li>Correos corporativos</li><li>Certificado SSL</li><li>Configuración inicial</li></ul>
-          </article>
-
-          <article class="card">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 4-4 3 3 5-7"/></svg></div>
-            <h3>SEO base y rendimiento</h3>
-            <p>Preparamos la estructura técnica y de contenido para mejorar la indexación: títulos, metadatos, textos, imágenes, velocidad y jerarquía semántica.</p>
-            <ul><li>Optimización para Google</li><li>Metadatos y estructura H</li><li>Imágenes con ALT</li><li>Schema y enlaces internos</li></ul>
-          </article>
-        </div>
-
-        <div class="seo-band">
-          <div>
-            <h3>Contenido pensado para atraer clientes</h3>
-            <p>La web queda orientada a búsquedas comerciales como desarrollo web en Chile, páginas web profesionales, tiendas online, ecommerce, diseño web para empresas, soporte técnico web y SEO para empresas.</p>
-          </div>
-          <a class="btn btn-primary" href="#contacto">Quiero cotizar mi web</a>
-        </div>
-      </div>
-    </section>
-
-
 
     <section class="section deliverables" id="entregables">
       <div class="container">
@@ -1075,6 +1237,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     </section>
 
 
+    <section class="section why">
+      <div class="container">
+        <span class="eyebrow">Por qué elegir Activa Web</span>
+        <h2>Más que una página: una presencia digital confiable.</h2>
+        <p class="lead">Activa Web combina diseño profesional, contenido comercial, estructura SEO y soporte cercano para que el cliente sienta que su proyecto está en buenas manos.</p>
+        <div class="why-grid">
+          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"/></svg></div><h3>Confianza visual</h3><p>Diseño sobrio, limpio y corporativo para que la marca se vea seria desde el primer vistazo.</p></div>
+          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M7 15l4-4 3 3 5-7"/></svg></div><h3>Enfoque comercial</h3><p>Textos, botones y recorridos pensados para que el visitante entienda, confíe y consulte.</p></div>
+          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></div><h3>Claridad total</h3><p>Planes, proceso, entregables y preguntas frecuentes explicados de forma simple y directa.</p></div>
+          <div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Soporte cercano</h3><p>Acompañamiento inicial, revisión y capacitación para que el cliente no quede a la deriva.</p></div>
+        </div>
+      </div>
+    </section>
 
     <section class="section alt" id="faq">
       <div class="container faq-grid">
@@ -1094,103 +1269,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
     </section>
 
- 
 
-    <!-- Sección Activa Web · confianza y proceso comentada por solicitud: no se muestra en la web.
-    <section class="trust-flow-section" id="flujo">
-      <div class="container">
-        <div class="trust-flow-wrap">
-          <div class="trust-flow-main">
-            <span class="trust-badge">Activa Web · confianza y proceso</span>
-            <h2>Más que una página web: un proyecto guiado de principio a fin.</h2>
-            <p class="trust-flow-intro">En Activa Web entendemos que una empresa no contrata solo un diseño bonito. Contrata tranquilidad, claridad y respaldo. Por eso guiamos cada proyecto con un proceso ordenado, comunicación cercana y ejecución profesional para avanzar con seguridad desde el primer contacto hasta la publicación.</p>
 
-            <div class="trust-highlight" id="confianza">
-              <p><strong>Lo que el cliente debe sentir:</strong> que Activa Web es una empresa seria de <strong>desarrollo web en Chile</strong>, preparada para tomar su proyecto, ordenar sus ideas y transformarlas en una <strong>página web profesional, tienda online, ecommerce o sitio corporativo</strong> funcional, moderno y confiable.</p>
-            </div>
 
-            <div class="trust-steps">
-              <article class="trust-step">
-                <div class="trust-step-number">01</div>
-                <div>
-                  <h3>Primero entendemos el proyecto</h3>
-                  <p>Antes de cotizar, revisamos el tipo de empresa, sus objetivos, servicios, público y necesidades reales. Así recomendamos con criterio si conviene una web informativa, una tienda online, un ecommerce o una web corporativa más completa.</p>
-                </div>
-              </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">02</div>
-                <div>
-                  <h3>Ordenamos estructura, contenido y diseño</h3>
-                  <p>Definimos secciones, mensajes, llamados a la acción, formularios, enfoque comercial e imagen visual. Trabajamos con un diseño sobrio, limpio y corporativo para transmitir profesionalismo, confianza y conversión.</p>
-                </div>
-              </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">03</div>
-                <div>
-                  <h3>Desarrollamos con enfoque profesional y SEO</h3>
-                  <p>Implementamos la web con versión responsive, integración de WhatsApp, formularios, velocidad optimizada, configuración técnica y base SEO para Google, pensando en posicionamiento, experiencia de usuario y confianza comercial.</p>
-                </div>
-              </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">04</div>
-                <div>
-                  <h3>Publicamos, capacitamos y acompañamos</h3>
-                  <p>El proyecto no termina al subir la web. Realizamos revisión final, publicación, soporte inicial y capacitación básica para que el cliente pueda administrar lo esencial con tranquilidad y seguridad.</p>
-                </div>
-              </article>
-            </div>
-
-            <div class="trust-cta">
-              <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20mi%20proyecto%20web" target="_blank" rel="noopener">Quiero cotizar mi proyecto</a>
-              <a class="btn btn-ghost" href="#contacto">Quiero hablar con Activa Web</a>
-            </div>
+    <section class="section contact-section" id="contacto">
+      <div class="container contact-layout">
+        <div class="contact-info">
+          <span class="eyebrow">Contacto</span>
+          <h2>Cuéntanos tu proyecto y te orientamos con claridad.</h2>
+          <p class="lead">Completa el formulario y explica qué necesita tu empresa. Te ayudaremos a definir si corresponde una página web profesional, una web corporativa, una tienda online o una mejora de sitio existente.</p>
+          <div class="contact-list">
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 15.5a4 4 0 0 1-4 4H8l-5 3V7.5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg><div><b>WhatsApp comercial</b><a href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20un%20desarrollo%20web" target="_blank" rel="noopener">+56 9 5215 7840</a></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg><div><b>Correo de contacto</b><span>contacto@activa-web.cl</span></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg><div><b>Atención</b><span>Empresas, profesionales y emprendedores en Chile</span></div></div>
           </div>
-
-          <div class="trust-flow-side">
-            <article class="trust-card dark">
-              <h3>Claridad antes de contratar</h3>
-              <p>Activa Web explica cada etapa de forma simple y directa. El cliente sabe qué recibirá, cómo avanzará el proyecto y quién estará detrás del desarrollo de su web.</p>
-              <ul class="trust-list">
-                <li>Comunicación directa por WhatsApp y correo.</li>
-                <li>Proceso explicado por etapas, sin lenguaje técnico innecesario.</li>
-                <li>Planes claros para páginas web, ecommerce y web corporativa.</li>
-                <li>Diseño profesional orientado a confianza y conversión.</li>
-              </ul>
-            </article>
-
-            <article class="trust-card">
-              <h3>Servicios profesionales de Activa Web en Chile</h3>
-              <p>Desarrollamos soluciones digitales para empresas, emprendedores y marcas que necesitan proyectar seriedad, vender mejor y fortalecer su presencia digital.</p>
-              <div class="trust-services-grid">
-                <div class="trust-service"><b>Diseño y desarrollo web</b><span>Páginas web profesionales, modernas, responsivas y orientadas a confianza.</span></div>
-                <div class="trust-service"><b>Tiendas online y ecommerce</b><span>Catálogo, carrito, pagos, envíos y panel autoadministrable para vender online.</span></div>
-                <div class="trust-service"><b>Web corporativa</b><span>Secciones internas, presentación formal de servicios y estructura comercial sólida.</span></div>
-                <div class="trust-service"><b>SEO base para Google</b><span>Jerarquía de contenidos, metaetiquetas, textos optimizados y estructura técnica inicial.</span></div>
-                <div class="trust-service"><b>Hosting, dominio y correos</b><span>Configuración profesional para operar de forma formal y segura.</span></div>
-                <div class="trust-service"><b>Soporte y acompañamiento</b><span>Revisión final, ajustes, publicación y apoyo inicial para avanzar con seguridad.</span></div>
-              </div>
-            </article>
-
-            <article class="trust-card">
-              <h3>Responsabilidad como empresa de desarrollo web</h3>
-              <ul class="trust-list">
-                <li><strong>Proyecto guiado:</strong> orientación en secciones, contenido, imágenes y objetivos.</li>
-                <li><strong>Imagen corporativa:</strong> diseño sobrio, limpio y profesional para transmitir seriedad.</li>
-                <li><strong>Entrega funcional:</strong> web publicada, responsive, con formularios, WhatsApp y estructura SEO base.</li>
-                <li><strong>Acompañamiento:</strong> ajustes, revisión final y capacitación inicial para usar la web con confianza.</li>
-                <li><strong>Compromiso profesional:</strong> cada proyecto se trabaja con orden, responsabilidad y enfoque comercial.</li>
-              </ul>
-            </article>
-          </div>
+          <div class="professional-note">Mientras más claro sea el objetivo, mejor podremos orientarte: captar clientes, vender productos, presentar servicios, mejorar tu imagen o renovar una web antigua.</div>
         </div>
+
+        <form class="contact-form" onsubmit="sendWhatsApp(event)">
+          <div class="form-grid">
+            <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required></div>
+            <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa" autocomplete="organization"></div>
+            <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" placeholder="+56 9 ..." autocomplete="tel" required></div>
+            <div class="field"><label for="correo">Correo</label><input id="correo" name="correo" type="email" placeholder="correo@empresa.cl" autocomplete="email"></div>
+            <div class="field full"><label for="servicios">Servicio principal</label><select id="servicios" name="servicios" required><option value="" selected disabled>Selecciona el servicio que necesitas</option><option value="Página web profesional">Página web profesional</option><option value="Tienda online ecommerce">Tienda online / ecommerce</option><option value="Web corporativa">Web corporativa para empresa</option><option value="Landing page">Landing page de captación</option><option value="Rediseño web">Rediseño de sitio existente</option><option value="Mejoras web">Mejoras web y soporte</option><option value="Hosting y correos">Hosting, dominio y correos corporativos</option><option value="SEO">SEO base y optimización</option><option value="No estoy seguro">No estoy seguro, necesito orientación</option></select></div>
+            <div class="field"><label for="presupuesto">Presupuesto estimado</label><select id="presupuesto" name="presupuesto"><option value="Por definir">Por definir</option><option value="Hasta $150.000">Hasta $150.000</option><option value="$150.000 a $250.000">$150.000 a $250.000</option><option value="$250.000 a $500.000">$250.000 a $500.000</option><option value="Más de $500.000">Más de $500.000</option></select></div>
+            <div class="field"><label for="plazo">Plazo ideal</label><select id="plazo" name="plazo"><option value="Sin urgencia">Sin urgencia</option><option value="Lo antes posible">Lo antes posible</option><option value="1 a 2 semanas">1 a 2 semanas</option><option value="3 a 4 semanas">3 a 4 semanas</option><option value="Más de 1 mes">Más de 1 mes</option></select></div>
+            <div class="field full"><label for="mensaje">Cuéntanos sobre el proyecto</label><textarea id="mensaje" name="mensaje" placeholder="Ej: necesito una página web corporativa con servicios, formulario, WhatsApp, correos, SEO base y posibilidad de agregar tienda online..." required></textarea></div>
+          </div>
+          <div class="submit-row">
+            <button class="btn btn-primary" type="submit">Solicitar orientación por WhatsApp</button>
+            <a class="btn btn-ghost" href="mailto:contacto@activa-web.cl?subject=Cotizaci%C3%B3n%20web%20Activa%20Web">Enviar por correo</a>
+          </div>
+          <p class="form-note">Al enviar, se abrirá WhatsApp con el resumen listo para iniciar una conversación comercial con Activa Web.</p>
+        </form>
       </div>
     </section>
-    -->
-
-
 
     <section class="cta">
       <div class="container">
@@ -1211,7 +1325,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
       <div class="footer-col">
         <h4>Accesos</h4>
-        <a href="#servicios">Servicios</a>
+        <a href="#planes">Servicios</a>
         <a href="#planes">Planes</a>
         <a href="#proceso">Proceso</a>
         <a href="#portafolio">Portafolio</a>
@@ -1219,16 +1333,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
-        <a href="#servicios">Diseño web</a>
-        <a href="#servicios">Tiendas online</a>
-        <a href="#servicios">Ecommerce</a>
-        <a href="#servicios">Web corporativa</a>
-        <a href="#servicios">Mejoras web</a>
+        <a href="#planes">Diseño web</a>
+        <a href="#planes">Tiendas online</a>
+        <a href="#planes">Ecommerce</a>
+        <a href="#planes">Web corporativa</a>
+        <a href="#planes">Mejoras web</a>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <p>WhatsApp: +56 9 5215 7840</p>
-        <p>contact@activa-web.cl</p>
+        <p>contacto@activa-web.cl</p>
         <p>Atención en Chile</p>
       </div>
     </div>
@@ -1243,7 +1357,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
   </a>
 
   <script>
-    function sendWhatsAppFromForm(form){
+    function sendWhatsApp(event){
+      event.preventDefault();
+      const form = event.currentTarget;
       const data = new FormData(form);
       const resumen = [
         'Hola Activa Web, quiero cotizar un proyecto web.',
