@@ -51,7 +51,7 @@
     .topbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.topbar strong{color:#fff}
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(227,232,239,.86)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}.brand svg{display:block}.brand-mark{width:48px}.brand-word{width:182px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}.brand-logo{display:block;width:230px;height:auto}
     .nav-links{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#344055}.nav-links a:hover{color:var(--blue)}
     .mobile-toggle{display:none;background:none;border:0;color:var(--navy);font-size:25px}
     .hero{position:relative;overflow:hidden;padding:62px 0 46px;background:radial-gradient(circle at 78% 8%,rgba(20,104,255,.14),transparent 31%),radial-gradient(circle at 12% 18%,rgba(25,195,125,.11),transparent 27%),linear-gradient(180deg,#fff 0%,#F8FBFF 100%)}
@@ -88,7 +88,7 @@
     .professional-note{margin-top:18px;padding:16px;border-left:3px solid var(--blue);background:#F8FBFF;border-radius:0 10px 10px 0;color:#4C5667;font-size:13px}
 
     @media(max-width:980px){.nav-links{display:none}.mobile-toggle{display:block}.nav.open .nav-links{display:flex;position:absolute;left:20px;right:20px;top:84px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow)}.hero-grid,.split,.faq-grid,.contact-layout{grid-template-columns:1fr}.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid{grid-template-columns:1fr 1fr}.plan.featured{transform:none}.section-head{display:block}.section-head p{margin-top:12px}.visual-card{min-height:430px}}
-    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}.topbar{display:none}.nav{height:70px}.brand-word{width:160px}.brand-mark{width:43px}.hero{padding:52px 0}.hero-actions .btn{width:100%}.trust-row,.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.panel-grid,.form-grid,.service-options{grid-template-columns:1fr}.dash-grid{grid-template-columns:1fr}.visual-card{min-height:400px;border-radius:18px}.system-note{display:block}.logo-aw{gap:10px}.logo-aw-mark{width:64px}.logo-aw-text{height:44px}.step{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}.topbar{display:none}.nav{height:70px}.brand-logo{width:190px}.hero{padding:52px 0}.hero-actions .btn{width:100%}.trust-row,.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.panel-grid,.form-grid,.service-options{grid-template-columns:1fr}.dash-grid{grid-template-columns:1fr}.visual-card{min-height:400px;border-radius:18px}.system-note{display:block}.logo-aw{gap:10px}.logo-aw-mark{width:64px}.logo-aw-text{height:44px}.step{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
   </style>
 </head>
 <body>
@@ -101,8 +101,7 @@
   <header>
     <div class="container nav" id="nav">
       <a class="brand" href="#inicio" aria-label="ActivaWeb">
-        <svg class="brand-mark" viewBox="0 0 120 84" aria-hidden="true"><path d="M6 78 L39 5 L69 78 L54 78 L41 45 L27 78 Z" fill="#071B3A"/><path d="M53 78 L68 45 L84 78 L101 29 L116 29 L91 78 L75 78 L68 61 L60 78 Z" fill="#1468FF"/><path d="M98 21 L119 0 L111 23 Z" fill="#19C37D"/></svg>
-        <svg class="brand-word" viewBox="0 0 390 68" aria-hidden="true"><text x="0" y="42" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800" letter-spacing="-2" fill="#071B3A">ACTIVA</text><text x="194" y="42" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800" letter-spacing="-2" fill="#1468FF">WEB</text><text x="0" y="63" font-family="Inter,Arial,sans-serif" font-size="12" fill="#697386" letter-spacing=".8">Soluciones web escalables para empresas</text></svg>
+        <img class="brand-logo" src="logo/logo.png" alt="ActivaWeb" width="1536" height="511">
       </a>
       <nav class="nav-links" aria-label="Menú principal"><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proceso">Proceso</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></nav>
       <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">Cotizar</a>
