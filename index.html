@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ActivaWeb | Desarrollo web profesional en Chile</title>
+  <meta name="description" content="ActivaWeb desarrolla sitios web corporativos, tiendas online y soluciones digitales escalables para empresas en Chile. Diseño, SEO, hosting, correos, soporte y capacitación." />
+  <meta name="theme-color" content="#071B3A" />
+  <style>
+    :root{
+      --navy:#071B3A;
+      --navy-2:#0B2550;
+      --blue:#1468FF;
+      --blue-soft:#EAF2FF;
+      --green:#19C37D;
+      --green-soft:#E8FBF3;
+      --ink:#121826;
+      --text:#4C5667;
+      --muted:#7B8493;
+      --line:#E3E8EF;
+      --soft:#F6F9FC;
+      --white:#FFFFFF;
+      --radius:10px;
+      --shadow:0 18px 55px rgba(7,27,58,.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .section{padding:68px 0}
+    .section.alt{background:var(--soft)}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue)}
+    .eyebrow:before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:40px}
+    h1,h2,h3{color:var(--navy);letter-spacing:-.035em;line-height:1.08}
+    h1{font-size:clamp(28px,4.1vw,46px);font-weight:560;max-width:780px;letter-spacing:-.028em;line-height:1.14}
+    h2{font-size:clamp(24px,3.2vw,36px);font-weight:600;max-width:760px;letter-spacing:-.025em;line-height:1.16}
+    h3{font-size:17px;font-weight:620;letter-spacing:-.018em}
+    p{color:var(--text)}
+    .lead{font-size:clamp(15px,1.35vw,17px);max-width:710px;color:#3E4857;margin-top:16px;line-height:1.72}
+    .muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:0 14px;border-radius:7px;border:1px solid transparent;font-size:12px;font-weight:680;letter-spacing:.01em;transition:.2s ease;cursor:pointer;white-space:nowrap}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),#0756D7);color:#fff;box-shadow:0 12px 28px rgba(20,104,255,.22)}
+    .btn-dark{background:var(--navy);color:#fff;box-shadow:0 12px 28px rgba(7,27,58,.16)}
+    .btn-ghost{background:#fff;color:var(--navy);border-color:var(--line)}
+    .btn-ghost:hover{border-color:#B9C7D8;color:var(--blue)}
+    .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+    .topbar{background:var(--navy);color:#D8E7FF;font-size:12px;padding:8px 0}
+    .topbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.topbar strong{color:#fff}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(227,232,239,.86)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:max-content}.brand svg{display:block}.brand-mark{width:48px}.brand-word{width:182px}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#344055}.nav-links a:hover{color:var(--blue)}
+    .mobile-toggle{display:none;background:none;border:0;color:var(--navy);font-size:25px}
+    .hero{position:relative;overflow:hidden;padding:62px 0 46px;background:radial-gradient(circle at 78% 8%,rgba(20,104,255,.14),transparent 31%),radial-gradient(circle at 12% 18%,rgba(25,195,125,.11),transparent 27%),linear-gradient(180deg,#fff 0%,#F8FBFF 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .promo-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;box-shadow:0 10px 28px rgba(7,27,58,.06);font-size:13px;font-weight:700;color:#344055;margin-bottom:18px}.promo-pill b{color:var(--green)}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px}.trust-pill{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:0 10px 28px rgba(7,27,58,.045)}.trust-pill b{display:block;color:var(--navy);font-size:18px}.trust-pill span{font-size:12px;color:var(--muted)}
+    .visual-card{position:relative;background:linear-gradient(145deg,#061936,#0C2E67 58%,#1468FF);border-radius:22px;padding:22px;box-shadow:var(--shadow);min-height:510px;color:#fff;overflow:hidden}.visual-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(25,195,125,.42),transparent 21%),radial-gradient(circle at 15% 68%,rgba(20,104,255,.34),transparent 27%)}
+    .browser{position:relative;z-index:1;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:16px;backdrop-filter:blur(10px);box-shadow:0 22px 70px rgba(0,0,0,.22)}
+    .browser-top{display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:12px;margin-bottom:16px}.dot{width:9px;height:9px;border-radius:50%;background:#fff;opacity:.55}.dot:nth-child(3){background:var(--green);opacity:.95}
+    .dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.dash-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px;min-height:116px}.dash-card strong{display:block;font-size:29px;letter-spacing:-.04em}.dash-card span{font-size:12px;color:#DBE9FF}
+    .chart{height:160px;border-radius:16px;margin-top:12px;background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.045));position:relative;overflow:hidden}.chart:after{content:"";position:absolute;left:22px;right:22px;bottom:28px;height:82px;background:linear-gradient(135deg,transparent 15%,rgba(25,195,125,.88) 16%,rgba(20,104,255,.96) 60%,transparent 61%);clip-path:polygon(0 92%,18% 72%,35% 80%,53% 34%,72% 49%,100% 0,100% 100%,0 100%)}
+    .system-note{position:relative;z-index:1;margin-top:14px;background:#fff;color:var(--navy);border-radius:14px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.system-note b{display:block}.system-note span{font-size:12px;color:var(--muted)}
+    .logo-aw{display:flex;align-items:center;gap:16px}.logo-aw-mark{width:86px}.logo-aw-text{height:54px}
+    .stats{margin-top:-26px;position:relative;z-index:2}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 20px 50px rgba(7,27,58,.075)}.stat{padding:18px;border-radius:14px;background:linear-gradient(180deg,#fff,#F8FBFF)}.stat strong{display:block;color:var(--navy);font-size:28px;letter-spacing:-.04em}.stat span{font-size:13px;color:var(--text);font-weight:600}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}.section-head p{max-width:530px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 14px 42px rgba(7,27,58,.055);transition:.22s}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.card p{margin-top:10px;font-size:14px}.card ul{display:grid;gap:8px;margin-top:16px;color:#596375;font-size:13px}.card li{display:flex;gap:8px;align-items:flex-start}.card li:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:7px;flex:0 0 auto}
+    .icon{width:46px;height:46px;border:1px solid #D8E1EC;border-radius:13px;display:grid;place-items:center;margin-bottom:18px;color:var(--navy);background:#fff}.icon svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}.icon.blue{color:var(--blue);background:var(--blue-soft);border-color:#CFE0FF}.icon.green{color:#0E9F64;background:var(--green-soft);border-color:#CFF5E4}
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 14px 42px rgba(7,27,58,.055);position:relative;display:flex;flex-direction:column}.plan.featured{background:linear-gradient(160deg,#071B3A,#0B2E66);color:#fff;border-color:rgba(255,255,255,.16);transform:translateY(-8px)}.plan.featured h3,.plan.featured p,.plan.featured li{color:#fff}.tag{display:inline-flex;width:max-content;border-radius:9px;background:var(--blue-soft);color:var(--blue);padding:6px 9px;font-size:11px;font-weight:800;margin-bottom:14px}.plan.featured .tag{background:rgba(25,195,125,.16);color:#A8F4D4;border:1px solid rgba(25,195,125,.35)}.price{margin:14px 0 6px}.price del{display:block;color:var(--muted);font-size:14px;margin-bottom:2px}.plan.featured .price del{color:#BFD1EA}.price strong{font-size:35px;line-height:1;color:var(--navy);letter-spacing:-.05em}.plan.featured .price strong{color:#fff}.price small{font-size:13px;color:var(--muted);font-weight:700}.discount{display:inline-block;margin-top:8px;background:var(--green);color:#fff;border-radius:8px;padding:5px 8px;font-size:11px;font-weight:850}.plan ul{display:grid;gap:10px;margin:20px 0;color:#4F5B6B;font-size:13px}.plan li{display:flex;gap:8px}.plan li:before{content:"✓";color:var(--green);font-weight:900}.plan .btn{margin-top:auto;width:max-content}
+    .process-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;grid-template-columns:54px 1fr;gap:16px;box-shadow:0 14px 42px rgba(7,27,58,.055)}.step-number{width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:850}.step p{font-size:14px;margin-top:8px}.step small{display:block;color:var(--blue);font-weight:800;margin-top:12px}
+    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}.panel{background:linear-gradient(180deg,#F7FAFF,#fff);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}.panel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}.mini-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}.mini-card b{display:block;color:var(--navy);margin-bottom:6px}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}.work{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 42px rgba(7,27,58,.055)}.work-screen{height:184px;background:linear-gradient(135deg,#071B3A,#1468FF);padding:16px;position:relative;overflow:hidden}.work-screen:after{content:"";position:absolute;right:-38px;top:-38px;width:130px;height:130px;border-radius:50%;background:rgba(25,195,125,.56)}.mock{height:100%;border-radius:13px;background:rgba(255,255,255,.93);padding:13px;position:relative;z-index:1}.mock-line{height:9px;border-radius:50px;background:#E8EEF8;margin-bottom:9px}.mock-line:nth-child(1){width:58%;background:#1468FF}.mock-line:nth-child(2){width:84%}.mock-line:nth-child(3){width:66%}.mock-block{height:58px;border-radius:12px;background:linear-gradient(135deg,#DFF2FF,#DDFBF0);margin-top:14px}.work-body{padding:20px}.work-body span{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.08em;text-transform:uppercase}.work-body h3{margin-top:6px}
+    .why{background:var(--navy);color:#fff;position:relative;overflow:hidden}.why h2,.why h3{color:#fff}.why p{color:#C9D6E9}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}.why-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px}.why-card .icon{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+    .faq-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:42px}.accordion{display:grid;gap:12px}.faq-item{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:#fff;border:0;text-align:left;font-weight:750;color:var(--navy);cursor:pointer}.faq-a{display:none;padding:0 20px 20px}.faq-item.active .faq-a{display:block}.faq-q span{font-size:22px;color:var(--blue);transition:.2s}.faq-item.active .faq-q span{transform:rotate(45deg)}
+    .cta{padding:72px 0;background:linear-gradient(135deg,#071B3A,#0B2E66 56%,#1468FF);color:#fff;text-align:center}.cta h2{color:#fff;margin:auto}.cta p{color:#D8E6FA;margin:16px auto 0;max-width:650px}.cta .hero-actions{justify-content:center}
+    footer{background:#05142B;color:#D5E0EF;padding:54px 0 24px}.footer-grid{display:grid;grid-template-columns:1.25fr .75fr .75fr 1fr;gap:30px}.footer-logo{width:235px}.footer-col h4{color:#fff;margin-bottom:14px;font-size:15px}.footer-col a,.footer-col p{display:block;color:#B8C6D8;margin:9px 0;font-size:13px}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;color:#A8B6C8}.whatsapp{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--green);color:#fff;box-shadow:0 18px 40px rgba(25,195,125,.32)}.whatsapp svg{width:28px;height:28px;fill:currentColor}
+
+    .contact-section{background:linear-gradient(180deg,#F6F9FC 0%,#FFFFFF 100%)}
+    .contact-layout{display:grid;grid-template-columns:.86fr 1.14fr;gap:28px;align-items:start}
+    .contact-info{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 16px 42px rgba(7,27,58,.055)}
+    .contact-list{display:grid;gap:12px;margin-top:22px}.contact-item{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid #E6EBF2;background:#FAFCFF;border-radius:12px}.contact-item svg{width:20px;height:20px;stroke:var(--blue);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:2px}.contact-item b{display:block;color:var(--navy);font-size:13px}.contact-item span,.contact-item a{font-size:13px;color:#536071;margin-top:2px;display:block}
+    .contact-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 22px 60px rgba(7,27,58,.08)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:720;color:#263246}.field input,.field select,.field textarea{width:100%;border:1px solid #D9E1EC;background:#fff;border-radius:8px;padding:12px 12px;font:inherit;font-size:13px;color:var(--ink);outline:none;transition:.18s}.field textarea{min-height:118px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(20,104,255,.10)}
+    .form-note{margin:14px 0 0;font-size:12px;color:var(--muted);line-height:1.55}.service-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}.service-check{position:relative}.service-check input{position:absolute;opacity:0;pointer-events:none}.service-check span{display:flex;align-items:center;gap:9px;min-height:42px;border:1px solid #DDE5EF;border-radius:9px;padding:10px 12px;font-size:12px;font-weight:650;color:#3D495A;background:#fff;transition:.18s}.service-check span:before{content:"";width:13px;height:13px;border-radius:4px;border:1px solid #AEBBCD;background:#fff;flex:0 0 auto}.service-check input:checked + span{border-color:var(--blue);background:#F2F7FF;color:var(--navy)}.service-check input:checked + span:before{background:var(--blue);border-color:var(--blue);box-shadow:inset 0 0 0 3px #fff}.submit-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}.submit-row .btn{min-height:40px}
+    .professional-note{margin-top:18px;padding:16px;border-left:3px solid var(--blue);background:#F8FBFF;border-radius:0 10px 10px 0;color:#4C5667;font-size:13px}
+
+    @media(max-width:980px){.nav-links{display:none}.mobile-toggle{display:block}.nav.open .nav-links{display:flex;position:absolute;left:20px;right:20px;top:84px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow)}.hero-grid,.split,.faq-grid,.contact-layout{grid-template-columns:1fr}.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid{grid-template-columns:1fr 1fr}.plan.featured{transform:none}.section-head{display:block}.section-head p{margin-top:12px}.visual-card{min-height:430px}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}.topbar{display:none}.nav{height:70px}.brand-word{width:160px}.brand-mark{width:43px}.hero{padding:52px 0}.hero-actions .btn{width:100%}.trust-row,.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.panel-grid,.form-grid,.service-options{grid-template-columns:1fr}.dash-grid{grid-template-columns:1fr}.visual-card{min-height:400px;border-radius:18px}.system-note{display:block}.logo-aw{gap:10px}.logo-aw-mark{width:64px}.logo-aw-text{height:44px}.step{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span><strong>ActivaWeb</strong> · Desarrollo web profesional, tiendas online y soporte para empresas en Chile</span>
+      <span>WhatsApp: <strong>+56 9 5215 7840</strong></span>
+    </div>
+  </div>
+  <header>
+    <div class="container nav" id="nav">
+      <a class="brand" href="#inicio" aria-label="ActivaWeb">
+        <svg class="brand-mark" viewBox="0 0 120 84" aria-hidden="true"><path d="M6 78 L39 5 L69 78 L54 78 L41 45 L27 78 Z" fill="#071B3A"/><path d="M53 78 L68 45 L84 78 L101 29 L116 29 L91 78 L75 78 L68 61 L60 78 Z" fill="#1468FF"/><path d="M98 21 L119 0 L111 23 Z" fill="#19C37D"/></svg>
+        <svg class="brand-word" viewBox="0 0 390 68" aria-hidden="true"><text x="0" y="42" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800" letter-spacing="-2" fill="#071B3A">ACTIVA</text><text x="194" y="42" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800" letter-spacing="-2" fill="#1468FF">WEB</text><text x="0" y="63" font-family="Inter,Arial,sans-serif" font-size="12" fill="#697386" letter-spacing=".8">Soluciones web escalables para empresas</text></svg>
+      </a>
+      <nav class="nav-links" aria-label="Menú principal"><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proceso">Proceso</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></nav>
+      <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">Cotizar</a>
+      <button class="mobile-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="promo-pill"><b>50% de descuento</b> por tiempo limitado en planes web</div>
+          <h1>Desarrollo web profesional para empresas que necesitan vender, crecer y generar confianza.</h1>
+          <p class="lead">En ActivaWeb desarrollamos sitios corporativos, tiendas online y plataformas web con una presentación seria, rápida y orientada a resultados. Cuidamos la estructura, el contenido, la navegación, el SEO base, el hosting, los correos corporativos, la capacitación y el soporte inicial para que tu presencia digital funcione con estándar profesional.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20mi%20sitio%20web" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a class="btn btn-ghost" href="#planes">Ver planes</a>
+          </div>
+          <div class="trust-row">
+            <div class="trust-pill"><b>SEO base</b><span>Estructura preparada para Google</span></div>
+            <div class="trust-pill"><b>Responsive</b><span>Diseño para celular, tablet y escritorio</span></div>
+            <div class="trust-pill"><b>Autoadmin.</b><span>Capacitación para gestionar contenido</span></div>
+          </div>
+        </div>
+        <div class="visual-card" aria-label="Vista previa de dashboard web">
+          <div class="browser">
+            <div class="browser-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="dash-grid"><div class="dash-card"><strong>+48%</strong><span>mejor percepción digital</span></div><div class="dash-card"><strong>24/7</strong><span>presencia online activa</span></div></div>
+            <div class="chart"></div>
+          </div>
+          <div class="system-note">
+            <div class="logo-aw"><svg class="logo-aw-mark" viewBox="0 0 120 84"><path d="M6 78 L39 5 L69 78 L54 78 L41 45 L27 78 Z" fill="#071B3A"/><path d="M53 78 L68 45 L84 78 L101 29 L116 29 L91 78 L75 78 L68 61 L60 78 Z" fill="#1468FF"/><path d="M98 21 L119 0 L111 23 Z" fill="#19C37D"/></svg><div><b>ActivaWeb</b><span>sitios rápidos, seguros y escalables</span></div></div>
+            <a class="btn btn-dark" href="#contacto">Solicitar diagnóstico</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="stats"><div class="container stats-grid"><div class="stat"><strong>50%</strong><span>descuento activo</span></div><div class="stat"><strong>3</strong><span>planes principales</span></div><div class="stat"><strong>100%</strong><span>adaptado a móviles</span></div><div class="stat"><strong>1</strong><span>capacitación incluida</span></div></div></div>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Servicios</span><h2>Soluciones web diseñadas para proyectar seriedad y convertir visitas en contactos.</h2></div><p>Tomamos como base las necesidades reales de una empresa: explicar mejor sus servicios, recibir consultas, vender en línea, administrar contenidos y mantener su sitio funcionando sin complicaciones técnicas.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon blue"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div><h3>Diseño web profesional</h3><p>Sitios modernos, ordenados y coherentes con la identidad de tu empresa. Priorizamos confianza, claridad comercial y navegación simple.</p><ul><li>Diseño responsivo</li><li>Secciones comerciales</li><li>Optimización visual</li><li>Botones de contacto directo</li></ul></article>
+          <article class="card"><div class="icon green"><svg viewBox="0 0 24 24"><path d="M6 6h15l-2 9H8L6 6Z"/><path d="M6 6 5 3H3"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></div><h3>Tiendas online</h3><p>Desarrollamos e-commerce para vender productos o servicios desde el primer día, con administración de catálogo, pedidos, pagos y envíos.</p><ul><li>Gestión de productos</li><li>Métodos de pago</li><li>Métodos de envío</li><li>Panel autoadministrable</li></ul></article>
+          <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>Soporte y mantención</h3><p>Mantenemos tu web actualizada, segura y operativa. Ideal para empresas que necesitan continuidad, respaldo y atención técnica.</p><ul><li>Actualizaciones web</li><li>Corrección de errores</li><li>Respaldo y seguridad</li><li>Soporte remoto</li></ul></article>
+          <article class="card"><div class="icon blue"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 4-4 3 3 5-7"/></svg></div><h3>SEO base</h3><p>Construimos tu web con estructura técnica y contenidos preparados para posicionar mejor en Google y facilitar la indexación.</p><ul><li>Etiquetas meta</li><li>Jerarquía de títulos</li><li>URLs amigables</li><li>Velocidad y estructura</li></ul></article>
+          <article class="card"><div class="icon green"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>Correos y hosting</h3><p>Configuramos dominio, hosting, certificados, correos corporativos y accesos necesarios para que tu empresa opere formalmente.</p><ul><li>Dominio y hosting</li><li>Correos corporativos</li><li>Certificado SSL</li><li>Configuración inicial</li></ul></article>
+          <article class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/><path d="M16 3.5 18 2M8 3.5 6 2"/></svg></div><h3>Desarrollo express</h3><p>Planificamos el proyecto en etapas para avanzar rápido, validar contenido y publicar sin perder calidad ni orden profesional.</p><ul><li>Levantamiento inicial</li><li>Diseño y ajustes</li><li>Publicación final</li><li>Capacitación incluida</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="planes">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Planes web</span><h2>Precios promocionales con 50% de descuento.</h2></div><p>Planes diseñados para distintos niveles de presencia digital. Todos consideran una base profesional: diseño responsivo, estructura SEO, capacitación, soporte inicial, correos corporativos y publicación.</p></div>
+        <div class="plans-grid">
+          <article class="plan"><span class="tag">Web informativa</span><h3>Presencia profesional</h3><p>Ideal para empresas de servicios, profesionales, emprendimientos y negocios que necesitan mostrar información clara y recibir consultas.</p><div class="price"><del>Antes $220.000</del><strong>$110.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div><ul><li>Landing o web informativa</li><li>Diseño responsive</li><li>Formulario o WhatsApp</li><li>SEO base</li><li>Correos corporativos</li><li>Capacitación inicial</li></ul><a class="btn btn-ghost" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20me%20interesa%20la%20Web%20Informativa" target="_blank">Cotizar plan</a></article>
+          <article class="plan featured"><span class="tag">Tienda online</span><h3>E-commerce para vender</h3><p>Para negocios que necesitan vender productos o servicios en línea con catálogo, pedidos, pagos, envíos y administración propia.</p><div class="price"><del>Antes $390.000</del><strong>$195.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div><ul><li>Catálogo de productos</li><li>Carrito de compras</li><li>Integración de pagos</li><li>Opciones de envío</li><li>Panel autoadministrable</li><li>Capacitación de uso</li></ul><a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20me%20interesa%20la%20Tienda%20Online" target="_blank">Solicitar tienda</a></article>
+          <article class="plan"><span class="tag">Web corporativa</span><h3>Empresa con mayor contenido</h3><p>Para empresas que necesitan una imagen más sólida, varias secciones, mayor estructura comercial y presentación formal de servicios.</p><div class="price"><del>Antes $420.000</del><strong>$210.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div><ul><li>Arquitectura por secciones</li><li>Páginas internas</li><li>SEO base avanzado</li><li>Correos corporativos</li><li>Formulario de contacto</li><li>Soporte inicial</li></ul><a class="btn btn-ghost" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20me%20interesa%20la%20Web%20Corporativa" target="_blank">Cotizar plan</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="container">
+        <span class="eyebrow">Proceso</span><h2>Un método ordenado para que tu web avance sin improvisaciones.</h2><p class="lead">El proceso combina levantamiento, diseño, desarrollo, publicación y mejora. La idea es que sepas qué se está haciendo, qué falta y cómo quedará funcionando tu sitio antes de publicarlo.</p>
+        <div class="process-grid">
+          <article class="step"><div class="step-number">01</div><div><h3>Diagnóstico y requerimientos</h3><p>Revisamos el tipo de empresa, servicios, público objetivo, competencia, objetivos comerciales y secciones necesarias. Definimos si corresponde una web informativa, tienda online o sitio corporativo.</p><small>Resultado: mapa inicial del proyecto.</small></div></article>
+          <article class="step"><div class="step-number">02</div><div><h3>Estructura y contenido</h3><p>Organizamos títulos, textos, llamados a la acción, servicios, formularios, datos de contacto, preguntas frecuentes y mensajes clave para que la web venda con claridad.</p><small>Resultado: arquitectura de la página.</small></div></article>
+          <article class="step"><div class="step-number">03</div><div><h3>Diseño visual profesional</h3><p>Creamos una propuesta visual coherente con la marca: colores, jerarquías, botones, íconos sobrios, secciones limpias, versiones móviles y estilo corporativo.</p><small>Resultado: diseño validado.</small></div></article>
+          <article class="step"><div class="step-number">04</div><div><h3>Desarrollo y configuración</h3><p>Implementamos la web, configuramos formularios, WhatsApp, correos, SEO base, velocidad, hosting, dominio, certificado SSL y elementos técnicos necesarios.</p><small>Resultado: sitio funcional.</small></div></article>
+          <article class="step"><div class="step-number">05</div><div><h3>Revisión y ajustes</h3><p>Probamos la navegación, responsive, botones, enlaces, formularios, textos, imágenes y experiencia completa antes de pasar a publicación.</p><small>Resultado: versión final aprobada.</small></div></article>
+          <article class="step"><div class="step-number">06</div><div><h3>Publicación y capacitación</h3><p>Publicamos el sitio y entregamos una capacitación para que puedas administrar contenido básico, revisar pedidos o mantener actualizada la información.</p><small>Resultado: web online y lista para operar.</small></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container split">
+        <div><span class="eyebrow">Qué incluye</span><h2>Una web pensada para trabajar por tu empresa todos los días.</h2><p class="lead">No se trata solo de verse bien. Una buena página debe comunicar, responder dudas, generar contactos y facilitar que el cliente tome acción.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20saber%20qu%C3%A9%20incluye%20mi%20web" target="_blank">Consultar inclusión</a><a class="btn btn-ghost" href="#contacto">Enviar mensaje</a></div></div>
+        <div class="panel"><h3>Base técnica y comercial</h3><div class="panel-grid"><div class="mini-card"><b>Diseño responsive</b><p>Adaptado a celulares, tablets y computadores.</p></div><div class="mini-card"><b>Contacto directo</b><p>WhatsApp, formularios y datos visibles.</p></div><div class="mini-card"><b>SEO inicial</b><p>Buenas prácticas para indexación y estructura.</p></div><div class="mini-card"><b>Capacitación</b><p>Aprende a administrar lo esencial del sitio.</p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="portafolio">
+      <div class="container"><div class="section-head"><div><span class="eyebrow">Portafolio referencial</span><h2>Diseños adaptables a distintos rubros.</h2></div><p>ActivaWeb puede desarrollar sitios para servicios profesionales, inmobiliarias, comercios, educación, salud, logística, industria y marcas que requieren una presencia digital formal.</p></div>
+        <div class="portfolio-grid"><article class="work"><div class="work-screen"><div class="mock"><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-block"></div></div></div><div class="work-body"><span>Web informativa</span><h3>Servicios profesionales</h3><p>Presentación clara, secciones de servicios y contacto rápido.</p></div></article><article class="work"><div class="work-screen"><div class="mock"><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-block"></div></div></div><div class="work-body"><span>Tienda online</span><h3>Catálogo y venta</h3><p>Productos, pedidos, pagos y administración de la tienda.</p></div></article><article class="work"><div class="work-screen"><div class="mock"><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-block"></div></div></div><div class="work-body"><span>Web corporativa</span><h3>Empresas consolidadas</h3><p>Mayor estructura, páginas internas y contenido institucional.</p></div></article></div>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="container"><span class="eyebrow">Por qué elegirnos</span><h2>Una propuesta seria para empresas que no quieren una web genérica.</h2><p class="lead">Trabajamos con comunicación clara, diseño profesional, soporte cercano y enfoque en resultados: que tu sitio genere confianza y ayude a convertir visitas en oportunidades.</p>
+        <div class="why-grid"><div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"/></svg></div><h3>Confianza</h3><p>Imagen seria, estructura ordenada y mensajes pensados para clientes reales.</p></div><div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M7 15l4-4 3 3 5-7"/></svg></div><h3>Resultados</h3><p>Botones, formularios y recorridos diseñados para recibir consultas.</p></div><div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></div><h3>Claridad</h3><p>Textos y secciones con jerarquía para explicar mejor tus servicios.</p></div><div class="why-card"><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Soporte</h3><p>Acompañamiento inicial, capacitación y resolución técnica.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="faq">
+      <div class="container faq-grid"><div><span class="eyebrow">Preguntas frecuentes</span><h2>Dudas comunes antes de cotizar.</h2><p class="lead">La cotización final puede variar según número de secciones, contenido, funciones especiales, integraciones, productos o requerimientos adicionales.</p></div><div class="accordion"><div class="faq-item active"><button class="faq-q">¿Los planes incluyen dominio y hosting? <span>+</span></button><div class="faq-a"><p>Se puede incluir configuración inicial de dominio, hosting, SSL y correos corporativos según el alcance acordado. Si ya tienes hosting, también podemos trabajar sobre tu proveedor actual.</p></div></div><div class="faq-item"><button class="faq-q">¿Puedo administrar mi sitio? <span>+</span></button><div class="faq-a"><p>Sí. La web puede quedar autoadministrable y se entrega una capacitación básica para editar textos, imágenes, productos o contenidos principales.</p></div></div><div class="faq-item"><button class="faq-q">¿La tienda online incluye pagos y envíos? <span>+</span></button><div class="faq-a"><p>El plan de tienda online considera configuración base de catálogo, pedidos, métodos de pago y opciones de envío. Las pasarelas específicas se definen según el negocio.</p></div></div><div class="faq-item"><button class="faq-q">¿Cuánto demora el desarrollo? <span>+</span></button><div class="faq-a"><p>Depende del contenido y la rapidez de aprobación. El proceso se organiza por etapas para avanzar de forma ordenada: requerimientos, diseño, desarrollo, revisión y publicación.</p></div></div></div></div>
+    </section>
+
+    <section class="section contact-section" id="contacto">
+      <div class="container contact-layout">
+        <div class="contact-info">
+          <span class="eyebrow">Contacto</span>
+          <h2>Solicita una evaluación para tu proyecto web.</h2>
+          <p class="lead">Completa el formulario y cuéntanos qué necesita tu empresa. Revisaremos el tipo de sitio, cantidad de secciones, funciones, contenido disponible y nivel de urgencia para orientarte con una propuesta clara.</p>
+          <div class="contact-list">
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 15.5a4 4 0 0 1-4 4H8l-5 3V7.5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg><div><b>WhatsApp comercial</b><a href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">+56 9 5215 7840</a></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg><div><b>Correo de contacto</b><span>contacto@activaweb.cl</span></div></div>
+            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg><div><b>Atención</b><span>Empresas y emprendedores en Chile</span></div></div>
+          </div>
+          <div class="professional-note">Una web profesional debe verse ordenada, cargar rápido, explicar bien la propuesta de valor y facilitar el contacto. Por eso el formulario recoge información clave antes de cotizar.</div>
+        </div>
+        <form class="contact-form" onsubmit="sendWhatsApp(event)">
+          <div class="form-grid">
+            <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" required></div>
+            <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa"></div>
+            <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" placeholder="+56 9 ..." required></div>
+            <div class="field"><label for="correo">Correo</label><input id="correo" name="correo" type="email" placeholder="correo@empresa.cl"></div>
+            <div class="field full"><label>Servicios de interés</label><div class="service-options">
+              <label class="service-check"><input type="checkbox" name="servicios" value="Web informativa"><span>Web informativa</span></label>
+              <label class="service-check"><input type="checkbox" name="servicios" value="Tienda online"><span>Tienda online</span></label>
+              <label class="service-check"><input type="checkbox" name="servicios" value="Web corporativa"><span>Web corporativa</span></label>
+              <label class="service-check"><input type="checkbox" name="servicios" value="Rediseño web"><span>Rediseño web</span></label>
+              <label class="service-check"><input type="checkbox" name="servicios" value="Hosting y correos"><span>Hosting y correos</span></label>
+              <label class="service-check"><input type="checkbox" name="servicios" value="SEO y soporte"><span>SEO y soporte</span></label>
+            </div></div>
+            <div class="field"><label for="presupuesto">Presupuesto estimado</label><select id="presupuesto" name="presupuesto"><option value="Por definir">Por definir</option><option value="Hasta $150.000">Hasta $150.000</option><option value="$150.000 a $250.000">$150.000 a $250.000</option><option value="$250.000 a $500.000">$250.000 a $500.000</option><option value="Más de $500.000">Más de $500.000</option></select></div>
+            <div class="field"><label for="plazo">Plazo ideal</label><select id="plazo" name="plazo"><option value="Sin urgencia">Sin urgencia</option><option value="Lo antes posible">Lo antes posible</option><option value="1 a 2 semanas">1 a 2 semanas</option><option value="3 a 4 semanas">3 a 4 semanas</option><option value="Más de 1 mes">Más de 1 mes</option></select></div>
+            <div class="field full"><label for="mensaje">Cuéntanos sobre el proyecto</label><textarea id="mensaje" name="mensaje" placeholder="Ej: necesito una web corporativa con servicios, formulario, WhatsApp, correos corporativos y SEO base..." required></textarea></div>
+          </div>
+          <div class="submit-row"><button class="btn btn-primary" type="submit">Enviar por WhatsApp</button><a class="btn btn-ghost" href="mailto:contacto@activaweb.cl?subject=Cotizaci%C3%B3n%20web%20ActivaWeb">Enviar por correo</a></div>
+          <p class="form-note">Al enviar, se abrirá WhatsApp con el resumen de tu solicitud listo para enviar a ActivaWeb.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="cta"><div class="container"><h2>Desarrollamos tu web con estructura, diseño y foco comercial.</h2><p>Web informativa, tienda online o sitio corporativo: te ayudamos a elegir la alternativa correcta según los objetivos de tu empresa.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">WhatsApp +56 9 5215 7840</a></div></div></section>
+  </main>
+  <footer><div class="container footer-grid"><div class="footer-col"><svg class="footer-logo" viewBox="0 0 470 82" aria-label="ActivaWeb"><path d="M6 72 L37 5 L65 72 L51 72 L39 42 L26 72 Z" fill="#fff"/><path d="M51 72 L66 42 L80 72 L97 27 L111 27 L88 72 L72 72 L66 57 L59 72 Z" fill="#1468FF"/><path d="M94 20 L113 0 L106 22 Z" fill="#19C37D"/><text x="134" y="48" font-family="Inter,Arial,sans-serif" font-size="40" font-weight="800" letter-spacing="-2" fill="#fff">ACTIVA</text><text x="321" y="48" font-family="Inter,Arial,sans-serif" font-size="40" font-weight="800" letter-spacing="-2" fill="#1468FF">WEB</text></svg><p>Desarrollo web, tiendas online y soluciones digitales para empresas en Chile.</p></div><div class="footer-col"><h4>Accesos</h4><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proceso">Proceso</a><a href="#portafolio">Portafolio</a></div><div class="footer-col"><h4>Servicios</h4><a>Web informativa</a><a>Tienda online</a><a>Web corporativa</a><a>Soporte web</a></div><div class="footer-col"><h4>Contacto</h4><p>WhatsApp: +56 9 5215 7840</p><p>contacto@activaweb.cl</p><p>Chile</p></div></div><div class="container footer-bottom"><span>© 2026 ActivaWeb. Todos los derechos reservados.</span><span>Soluciones web escalables para empresas.</span></div></footer>
+  <a class="whatsapp" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20web" target="_blank" rel="noopener" aria-label="WhatsApp ActivaWeb"><svg viewBox="0 0 32 32"><path d="M16.04 3.2A12.74 12.74 0 0 0 5.2 22.64L3.5 28.8l6.31-1.65a12.7 12.7 0 0 0 6.23 1.58h.01A12.76 12.76 0 0 0 16.04 3.2Zm7.5 18.24c-.32.9-1.88 1.72-2.6 1.82-.66.1-1.48.14-2.39-.15-.55-.17-1.26-.41-2.17-.8-3.82-1.65-6.31-5.5-6.5-5.76-.19-.26-1.55-2.06-1.55-3.93s.98-2.79 1.33-3.17c.35-.38.77-.48 1.02-.48.26 0 .51 0 .73.01.23.01.55-.09.86.66.32.77 1.09 2.65 1.18 2.84.1.19.16.42.03.67-.13.26-.19.42-.38.64-.19.22-.4.49-.57.66-.19.19-.39.4-.17.78.22.38.97 1.59 2.08 2.58 1.43 1.27 2.64 1.66 3.02 1.85.38.19.61.16.83-.1.26-.29.96-1.12 1.22-1.5.26-.38.51-.32.86-.19.35.13 2.24 1.06 2.62 1.25.38.19.64.29.73.45.1.16.1.93-.22 1.82Z"/></svg></a>
+  <script>
+
+    function sendWhatsApp(event){
+      event.preventDefault();
+      const form = event.currentTarget;
+      const data = new FormData(form);
+      const servicios = data.getAll('servicios');
+      const resumen = [
+        'Hola ActivaWeb, quiero cotizar un proyecto web.',
+        '',
+        'Nombre: ' + (data.get('nombre') || ''),
+        'Empresa: ' + (data.get('empresa') || 'No indicada'),
+        'Teléfono: ' + (data.get('telefono') || ''),
+        'Correo: ' + (data.get('correo') || 'No indicado'),
+        'Servicios: ' + (servicios.length ? servicios.join(', ') : 'No indicado'),
+        'Presupuesto: ' + (data.get('presupuesto') || 'Por definir'),
+        'Plazo ideal: ' + (data.get('plazo') || 'Por definir'),
+        '',
+        'Detalle del proyecto:',
+        data.get('mensaje') || ''
+      ].join('\n');
+      window.open('https://wa.me/56952157840?text=' + encodeURIComponent(resumen), '_blank');
+    }
+
+    document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('active')));
+  </script>
+</body>
+</html>
