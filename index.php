@@ -3,9 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ActivaWeb | Desarrollo web profesional en Chile</title>
-  <meta name="description" content="ActivaWeb desarrolla sitios web corporativos, tiendas online y soluciones digitales escalables para empresas en Chile. Diseño, SEO, hosting, correos, soporte y capacitación." />
+  <title>ActivaWeb | Diseño web profesional, tiendas online y SEO en Chile</title>
+  <meta name="description" content="Diseño web profesional en Chile para empresas y emprendedores: sitios corporativos, tiendas online, landing pages, hosting, correos, soporte y SEO base para aparecer en Google." />
+  <meta name="keywords" content="diseño web Chile, desarrollo web profesional, páginas web para empresas, tiendas online Chile, SEO Chile, landing page, web corporativa, ActivaWeb" />
+  <meta name="author" content="ActivaWeb" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://activaweb.cl/" />
   <meta name="theme-color" content="#071B3A" />
+  <meta name="format-detection" content="telephone=yes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:site_name" content="ActivaWeb" />
+  <meta property="og:title" content="ActivaWeb | Diseño web profesional, tiendas online y SEO en Chile" />
+  <meta property="og:description" content="Creamos sitios web corporativos, tiendas online y páginas de servicios rápidas, responsivas y optimizadas para posicionar en Google." />
+  <meta property="og:url" content="https://activaweb.cl/" />
+  <meta property="og:image" content="https://activaweb.cl/imagenes/10.png" />
+  <meta property="og:image:width" content="1672" />
+  <meta property="og:image:height" content="941" />
+  <meta property="og:image:alt" content="ActivaWeb desarrollo web profesional en Chile" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ActivaWeb | Diseño web profesional en Chile" />
+  <meta name="twitter:description" content="Sitios web, tiendas online, hosting, correos y SEO base para empresas en Chile." />
+  <meta name="twitter:image" content="https://activaweb.cl/imagenes/10.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"ProfessionalService",
+      "name":"ActivaWeb",
+      "url":"https://activaweb.cl/",
+      "logo":"https://activaweb.cl/logo/logo.png",
+      "image":"https://activaweb.cl/imagenes/10.png",
+      "description":"Diseño web profesional, tiendas online, hosting, correos corporativos, soporte y SEO base para empresas en Chile.",
+      "telephone":"+56952157840",
+      "email":"contacto@activaweb.cl",
+      "areaServed":{"@type":"Country","name":"Chile"},
+      "priceRange":"$$",
+      "address":{"@type":"PostalAddress","addressCountry":"CL"},
+      "sameAs":["https://wa.me/56952157840"],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Servicios de desarrollo web",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño web profesional"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tienda online"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO base y soporte web"}}
+        ]
+      }
+    }
+  </script>
   <style>
     :root{
       --navy:#071B3A;
@@ -86,10 +134,11 @@
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:720;color:#263246}.field input,.field select,.field textarea{width:100%;border:1px solid #D9E1EC;background:#fff;border-radius:8px;padding:12px 12px;font:inherit;font-size:13px;color:var(--ink);outline:none;transition:.18s}.field textarea{min-height:118px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(20,104,255,.10)}
     .form-note{margin:14px 0 0;font-size:12px;color:var(--muted);line-height:1.55}.service-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}.service-check{position:relative}.service-check input{position:absolute;opacity:0;pointer-events:none}.service-check span{display:flex;align-items:center;gap:9px;min-height:42px;border:1px solid #DDE5EF;border-radius:9px;padding:10px 12px;font-size:12px;font-weight:650;color:#3D495A;background:#fff;transition:.18s}.service-check span:before{content:"";width:13px;height:13px;border-radius:4px;border:1px solid #AEBBCD;background:#fff;flex:0 0 auto}.service-check input:checked + span{border-color:var(--blue);background:#F2F7FF;color:var(--navy)}.service-check input:checked + span:before{background:var(--blue);border-color:var(--blue);box-shadow:inset 0 0 0 3px #fff}.submit-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}.submit-row .btn{min-height:40px}
     .professional-note{margin-top:18px;padding:16px;border-left:3px solid var(--blue);background:#F8FBFF;border-radius:0 10px 10px 0;color:#4C5667;font-size:13px}
+    .field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#526176 50%),linear-gradient(135deg,#526176 50%,transparent 50%),linear-gradient(to right,#E6ECF4,#E6ECF4);background-position:calc(100% - 18px) 52%,calc(100% - 13px) 52%,calc(100% - 42px) 50%;background-size:5px 5px,5px 5px,1px 58%;background-repeat:no-repeat;padding-right:52px}.field select:hover{border-color:#B8C6D8}.mobile-only-note{display:none}
 
     @media(prefers-reduced-motion:reduce){.hero-slide,.hero-slide img{animation:none}.hero-slide:first-child{opacity:1}.hero-slide:not(:first-child){display:none}}
-    @media(max-width:980px){.nav-links{display:none}.mobile-toggle{display:block}.nav.open .nav-links{display:flex;position:absolute;left:20px;right:20px;top:84px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow)}.hero-grid,.split,.faq-grid,.contact-layout{grid-template-columns:1fr}.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.visual-ribbon{grid-template-columns:1fr 1fr}.plan.featured{transform:none}.section-head{display:block}.section-head p{margin-top:12px}.hero-grid{gap:34px}.visual-card{max-width:620px}.image-band:before,.why,.contact-section:before{background-attachment:scroll}.band-grid{grid-template-columns:1fr}.band-card{justify-self:start}}
-    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}.topbar{display:none}.nav{height:70px}.brand-logo{width:190px}.hero{padding:52px 0}.hero-actions .btn{width:100%}.trust-row,.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.panel-grid,.form-grid,.service-options,.visual-ribbon{grid-template-columns:1fr}.visual-card{border-radius:20px;padding:12px}.hero-slider{height:250px}.visual-caption{display:block}.visual-caption .btn{margin-top:12px;width:100%}.step{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
+    @media(max-width:980px){.nav-links{display:none}.mobile-toggle{display:block}.nav.open .nav-links{display:flex;position:absolute;left:20px;right:20px;top:84px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}.nav.open .nav-links a{padding:10px 2px}.hero-grid,.split,.faq-grid,.contact-layout{grid-template-columns:1fr}.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.visual-ribbon{grid-template-columns:1fr 1fr}.plan.featured{transform:none}.section-head{display:block}.section-head p{margin-top:12px}.hero-grid{gap:34px}.visual-card{max-width:620px}.image-band:before,.why,.contact-section:before{background-attachment:scroll}.band-grid{grid-template-columns:1fr}.band-card{justify-self:start}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1160px)}.section{padding:50px 0}.topbar{display:none}.nav{height:64px;gap:10px}.brand-logo{width:168px}.nav>.btn{display:none}.mobile-toggle{font-size:24px;min-width:44px;min-height:44px;border-radius:10px;background:#F3F7FC}.nav.open .nav-links{left:14px;right:14px;top:72px}.hero{padding:42px 0 36px}.hero h1{font-size:clamp(28px,9vw,36px);line-height:1.08}.lead{font-size:15px;line-height:1.62}.promo-pill{width:100%;justify-content:center;text-align:center;border-radius:14px}.hero-actions{gap:10px}.hero-actions .btn,.submit-row .btn{width:100%;min-height:48px;font-size:13px}.trust-row,.stats-grid,.cards,.plans-grid,.process-grid,.portfolio-grid,.why-grid,.footer-grid,.panel-grid,.form-grid,.visual-ribbon{grid-template-columns:1fr}.stats{margin-top:0}.stats-grid{padding:12px}.stat{padding:14px}.card,.plan,.contact-info,.contact-form{padding:20px;border-radius:16px}.price strong{font-size:31px}.visual-card{border-radius:20px;padding:10px}.hero-slider{height:230px}.visual-caption{display:block;padding:14px 2px 0}.visual-caption .btn{margin-top:12px;width:100%;min-height:46px}.step{grid-template-columns:1fr;padding:20px}.image-band{min-height:500px}.work-screen{height:210px}.field input,.field select,.field textarea{min-height:46px;font-size:16px}.field textarea{min-height:132px}.mobile-only-note{display:block}.whatsapp{right:14px;bottom:14px;width:52px;height:52px;border-radius:15px}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}}
   </style>
 </head>
 <body>
@@ -102,11 +151,11 @@
   <header>
     <div class="container nav" id="nav">
       <a class="brand" href="#inicio" aria-label="ActivaWeb">
-        <img class="brand-logo" src="logo/logo.png" alt="ActivaWeb" width="1536" height="511">
+        <img class="brand-logo" src="logo/logo.png" alt="ActivaWeb - desarrollo web profesional en Chile" width="1536" height="511" fetchpriority="high">
       </a>
       <nav class="nav-links" aria-label="Menú principal"><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proceso">Proceso</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></nav>
       <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">Cotizar</a>
-      <button class="mobile-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <button class="mobile-toggle" type="button" aria-label="Abrir menú" aria-controls="nav" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     </div>
   </header>
   <main>
@@ -124,10 +173,10 @@
         </div>
         <div class="visual-card" aria-label="Vista previa de sitios web profesionales">
           <div class="hero-slider" aria-hidden="true">
-            <div class="hero-slide"><img src="imagenes/10.png" alt=""></div>
-            <div class="hero-slide"><img src="imagenes/5.png" alt=""></div>
-            <div class="hero-slide"><img src="imagenes/4.png" alt=""></div>
-            <div class="hero-slide"><img src="imagenes/8.png" alt=""></div>
+            <div class="hero-slide"><img src="imagenes/10.png" alt="Vista previa de diseño web profesional ActivaWeb" width="1672" height="941" fetchpriority="high"></div>
+            <div class="hero-slide"><img src="imagenes/5.png" alt="Ejemplo de sitio web moderno desarrollado por ActivaWeb" width="1672" height="941" loading="lazy"></div>
+            <div class="hero-slide"><img src="imagenes/4.png" alt="Ejemplo de sitio web moderno desarrollado por ActivaWeb" width="1672" height="941" loading="lazy"></div>
+            <div class="hero-slide"><img src="imagenes/8.png" alt="Ejemplo de sitio web moderno desarrollado por ActivaWeb" width="1672" height="941" loading="lazy"></div>
           </div>
           <div class="visual-caption">
             <div><b>Diseño web con imagen corporativa</b><span>Portadas limpias, navegación clara y llamados a la acción visibles.</span></div>
@@ -245,14 +294,7 @@
             <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa"></div>
             <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" placeholder="+56 9 ..." required></div>
             <div class="field"><label for="correo">Correo</label><input id="correo" name="correo" type="email" placeholder="correo@empresa.cl"></div>
-            <div class="field full"><label>Servicios de interés</label><div class="service-options">
-              <label class="service-check"><input type="checkbox" name="servicios" value="Web informativa"><span>Web informativa</span></label>
-              <label class="service-check"><input type="checkbox" name="servicios" value="Tienda online"><span>Tienda online</span></label>
-              <label class="service-check"><input type="checkbox" name="servicios" value="Web corporativa"><span>Web corporativa</span></label>
-              <label class="service-check"><input type="checkbox" name="servicios" value="Rediseño web"><span>Rediseño web</span></label>
-              <label class="service-check"><input type="checkbox" name="servicios" value="Hosting y correos"><span>Hosting y correos</span></label>
-              <label class="service-check"><input type="checkbox" name="servicios" value="SEO y soporte"><span>SEO y soporte</span></label>
-            </div></div>
+            <div class="field full"><label for="servicios">Servicio principal de interés</label><select id="servicios" name="servicios" required><option value="" selected disabled>Selecciona el servicio que necesitas</option><option value="Web informativa">Web informativa profesional</option><option value="Tienda online">Tienda online / e-commerce</option><option value="Web corporativa">Web corporativa para empresa</option><option value="Rediseño web">Rediseño de sitio existente</option><option value="Hosting y correos">Hosting, dominio y correos corporativos</option><option value="SEO y soporte">SEO base, soporte y mantención</option><option value="No estoy seguro">No estoy seguro, necesito orientación</option></select><p class="form-note mobile-only-note">Optimizado para móvil: elige una opción y cuéntanos detalles adicionales en el mensaje.</p></div>
             <div class="field"><label for="presupuesto">Presupuesto estimado</label><select id="presupuesto" name="presupuesto"><option value="Por definir">Por definir</option><option value="Hasta $150.000">Hasta $150.000</option><option value="$150.000 a $250.000">$150.000 a $250.000</option><option value="$250.000 a $500.000">$250.000 a $500.000</option><option value="Más de $500.000">Más de $500.000</option></select></div>
             <div class="field"><label for="plazo">Plazo ideal</label><select id="plazo" name="plazo"><option value="Sin urgencia">Sin urgencia</option><option value="Lo antes posible">Lo antes posible</option><option value="1 a 2 semanas">1 a 2 semanas</option><option value="3 a 4 semanas">3 a 4 semanas</option><option value="Más de 1 mes">Más de 1 mes</option></select></div>
             <div class="field full"><label for="mensaje">Cuéntanos sobre el proyecto</label><textarea id="mensaje" name="mensaje" placeholder="Ej: necesito una web corporativa con servicios, formulario, WhatsApp, correos corporativos y SEO base..." required></textarea></div>
