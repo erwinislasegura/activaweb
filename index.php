@@ -876,7 +876,9 @@
       display:flex;
       align-items:center;
       overflow:hidden;
-      background:#061a3d;
+      background:
+        linear-gradient(180deg,rgba(6,26,61,.78),rgba(6,26,61,.94)),
+        url('imagenes/10.png') center/cover;
       isolation:isolate;
     }
     .hero-bg-video{
@@ -885,13 +887,14 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      z-index:-3;
+      z-index:0;
       filter:saturate(1.04) contrast(1.05) brightness(.72);
     }
     .hero-overlay{
       position:absolute;
       inset:0;
-      z-index:-2;
+      z-index:1;
+      pointer-events:none;
       background:
         radial-gradient(circle at 50% 18%,rgba(22,185,120,.22),transparent 26%),
         radial-gradient(circle at 72% 34%,rgba(18,103,241,.28),transparent 30%),
@@ -908,7 +911,7 @@
     }
     .hero-centered{
       position:relative;
-      z-index:1;
+      z-index:2;
       display:flex;
       justify-content:center;
       text-align:center;
@@ -1077,8 +1080,9 @@
 
   <main>
     <section class="hero hero-video" id="inicio" aria-label="Inicio Activa Web desarrollo web en Chile">
-      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="imagenes/10.png" aria-hidden="true">
-        <source src="video/fondo.mov" type="video/quicktime">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="imagenes/10.png" aria-hidden="true">
+        <source src="video/fondo.mov">
+        Tu navegador no puede reproducir el video de fondo.
       </video>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-centered">
