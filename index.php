@@ -944,6 +944,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
     </section>
 
+
+
+
+       <section class="image-band" aria-label="Diseño web corporativo profesional">
+      <div class="container band-grid">
+        <div>
+          <span class="eyebrow">Imagen profesional</span>
+          <h2>Diseño corporativo que transmite seriedad.</h2>
+          <p class="lead">Una web profesional no solo debe verse bien: debe explicar con claridad, cargar rápido, guiar al usuario y facilitar el contacto desde cualquier dispositivo.</p>
+        </div>
+        <div class="band-card">
+          <b>Menos ruido, más conversión</b>
+          <span>Jerarquía clara, colores sobrios, botones visibles, textos directos y secciones pensadas para convertir visitas en oportunidades.</span>
+        </div>
+      </div>
+    </section>
+
+
+
+    
+
     <section class="section" id="servicios">
       <div class="container">
         <div class="section-head">
@@ -1073,19 +1094,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
     </section>
 
-    <section class="image-band" aria-label="Diseño web corporativo profesional">
-      <div class="container band-grid">
-        <div>
-          <span class="eyebrow">Imagen profesional</span>
-          <h2>Diseño corporativo que transmite seriedad.</h2>
-          <p class="lead">Una web profesional no solo debe verse bien: debe explicar con claridad, cargar rápido, guiar al usuario y facilitar el contacto desde cualquier dispositivo.</p>
-        </div>
-        <div class="band-card">
-          <b>Menos ruido, más conversión</b>
-          <span>Jerarquía clara, colores sobrios, botones visibles, textos directos y secciones pensadas para convertir visitas en oportunidades.</span>
-        </div>
-      </div>
-    </section>
+ 
 
     <!-- Sección Activa Web · confianza y proceso comentada por solicitud: no se muestra en la web.
     <section class="trust-flow-section" id="flujo">
@@ -1181,151 +1190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
     </section>
     -->
 
-    <section class="image-band" aria-label="Diseño web corporativo profesional">
-      <div class="container band-grid">
-        <div>
-          <span class="eyebrow">Imagen profesional</span>
-          <h2>Diseño corporativo que transmite seriedad.</h2>
-          <p class="lead">Una web profesional no solo debe verse bien: debe explicar con claridad, cargar rápido, guiar al usuario y facilitar el contacto desde cualquier dispositivo.</p>
-        </div>
-        <div class="band-card">
-          <b>Menos ruido, más conversión</b>
-          <span>Jerarquía clara, colores sobrios, botones visibles, textos directos y secciones pensadas para convertir visitas en oportunidades.</span>
-        </div>
-      </div>
-    </section>
 
-    <section class="trust-flow-section" id="flujo">
-      <div class="container">
-        <div class="trust-flow-wrap">
-          <div class="trust-flow-main">
-            <span class="trust-badge">Activa Web · confianza y proceso</span>
-            <h2>Más que una página web: un proyecto guiado de principio a fin.</h2>
-            <p class="trust-flow-intro">En Activa Web entendemos que una empresa no contrata solo un diseño bonito. Contrata tranquilidad, claridad y respaldo. Por eso guiamos cada proyecto con un proceso ordenado, comunicación cercana y ejecución profesional para avanzar con seguridad desde el primer contacto hasta la publicación.</p>
-
-            <div class="trust-highlight" id="confianza">
-              <p><strong>Lo que el cliente debe sentir:</strong> que Activa Web es una empresa seria de <strong>desarrollo web en Chile</strong>, preparada para tomar su proyecto, ordenar sus ideas y transformarlas en una <strong>página web profesional, tienda online, ecommerce o sitio corporativo</strong> funcional, moderno y confiable.</p>
-            </div>
-
-            <div class="trust-steps">
-              <article class="trust-step">
-                <div class="trust-step-number">01</div>
-                <div>
-                  <h3>Primero entendemos el proyecto</h3>
-                  <p>Antes de cotizar, revisamos el tipo de empresa, sus objetivos, servicios, público y necesidades reales. Así recomendamos con criterio si conviene una web informativa, una tienda online, un ecommerce o una web corporativa más completa.</p>
-                </div>
-              </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">02</div>
-                <div>
-                  <h3>Ordenamos estructura, contenido y diseño</h3>
-                  <p>Definimos secciones, mensajes, llamados a la acción, formularios, enfoque comercial e imagen visual. Trabajamos con un diseño sobrio, limpio y corporativo para transmitir profesionalismo, confianza y conversión.</p>
-                </div>
-              </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">03</div>
-                <div>
-                  <h3>Desarrollamos con enfoque profesional y SEO</h3>
-                  <p>Implementamos la web con versión responsive, integración de WhatsApp, formularios, velocidad optimizada, configuración técnica y base SEO para Google, pensando en posicionamiento, experiencia de usuario y confianza comercial.</p>
-                </div>
-              </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">04</div>
-                <div>
-                  <h3>Publicamos, capacitamos y acompañamos</h3>
-                  <p>El proyecto no termina al subir la web. Realizamos revisión final, publicación, soporte inicial y capacitación básica para que el cliente pueda administrar lo esencial con tranquilidad y seguridad.</p>
-                </div>
-              </article>
-            </div>
-
-            <div class="trust-cta">
-              <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20mi%20proyecto%20web" target="_blank" rel="noopener">Quiero cotizar mi proyecto</a>
-              <a class="btn btn-ghost" href="#contacto">Quiero hablar con Activa Web</a>
-            </div>
-          </div>
-
-          <div class="trust-flow-side">
-            <article class="trust-card dark">
-              <h3>Claridad antes de contratar</h3>
-              <p>Activa Web explica cada etapa de forma simple y directa. El cliente sabe qué recibirá, cómo avanzará el proyecto y quién estará detrás del desarrollo de su web.</p>
-              <ul class="trust-list">
-                <li>Comunicación directa por WhatsApp y correo.</li>
-                <li>Proceso explicado por etapas, sin lenguaje técnico innecesario.</li>
-                <li>Planes claros para páginas web, ecommerce y web corporativa.</li>
-                <li>Diseño profesional orientado a confianza y conversión.</li>
-              </ul>
-            </article>
-
-            <article class="trust-card">
-              <h3>Servicios profesionales de Activa Web en Chile</h3>
-              <p>Desarrollamos soluciones digitales para empresas, emprendedores y marcas que necesitan proyectar seriedad, vender mejor y fortalecer su presencia digital.</p>
-              <div class="trust-services-grid">
-                <div class="trust-service"><b>Diseño y desarrollo web</b><span>Páginas web profesionales, modernas, responsivas y orientadas a confianza.</span></div>
-                <div class="trust-service"><b>Tiendas online y ecommerce</b><span>Catálogo, carrito, pagos, envíos y panel autoadministrable para vender online.</span></div>
-                <div class="trust-service"><b>Web corporativa</b><span>Secciones internas, presentación formal de servicios y estructura comercial sólida.</span></div>
-                <div class="trust-service"><b>SEO base para Google</b><span>Jerarquía de contenidos, metaetiquetas, textos optimizados y estructura técnica inicial.</span></div>
-                <div class="trust-service"><b>Hosting, dominio y correos</b><span>Configuración profesional para operar de forma formal y segura.</span></div>
-                <div class="trust-service"><b>Soporte y acompañamiento</b><span>Revisión final, ajustes, publicación y apoyo inicial para avanzar con seguridad.</span></div>
-              </div>
-            </article>
-
-            <article class="trust-card">
-              <h3>Responsabilidad como empresa de desarrollo web</h3>
-              <ul class="trust-list">
-                <li><strong>Proyecto guiado:</strong> orientación en secciones, contenido, imágenes y objetivos.</li>
-                <li><strong>Imagen corporativa:</strong> diseño sobrio, limpio y profesional para transmitir seriedad.</li>
-                <li><strong>Entrega funcional:</strong> web publicada, responsive, con formularios, WhatsApp y estructura SEO base.</li>
-                <li><strong>Acompañamiento:</strong> ajustes, revisión final y capacitación inicial para usar la web con confianza.</li>
-                <li><strong>Compromiso profesional:</strong> cada proyecto se trabaja con orden, responsabilidad y enfoque comercial.</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contacto">
-      <div class="container contact-layout">
-        <div class="contact-info">
-          <span class="eyebrow">Contacto</span>
-          <h2>Cuéntanos tu proyecto y te orientamos con claridad.</h2>
-          <p class="lead">Completa el formulario y explica qué necesita tu empresa. Te ayudaremos a definir si corresponde una página web profesional, una web corporativa, una tienda online o una mejora de sitio existente.</p>
-          <div class="contact-list">
-            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M21 15.5a4 4 0 0 1-4 4H8l-5 3V7.5a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg><div><b>WhatsApp comercial</b><a href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20un%20desarrollo%20web" target="_blank" rel="noopener">+56 9 5215 7840</a></div></div>
-            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg><div><b>Correo de contacto</b><span>contact@activa-web.cl</span></div></div>
-            <div class="contact-item"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg><div><b>Atención</b><span>Empresas, profesionales y emprendedores en Chile</span></div></div>
-          </div>
-          <div class="professional-note">Mientras más claro sea el objetivo, mejor podremos orientarte: captar clientes, vender productos, presentar servicios, mejorar tu imagen o renovar una web antigua.</div>
-        </div>
-
-        <form class="contact-form" method="post" action="#contacto">
-          <input type="hidden" name="activa_contact_form" value="1">
-          <?php if ($formStatus !== null): ?>
-            <div class="form-alert <?php echo $formStatus === 'success' ? 'success' : 'error'; ?>">
-              <?php echo htmlspecialchars($formMessage, ENT_QUOTES, 'UTF-8'); ?>
-            </div>
-          <?php endif; ?>
-          <div class="form-grid">
-            <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required></div>
-            <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" type="text" placeholder="Nombre de la empresa" autocomplete="organization"></div>
-            <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" placeholder="+56 9 ..." autocomplete="tel" required></div>
-            <div class="field"><label for="correo">Correo</label><input id="correo" name="correo" type="email" placeholder="correo@empresa.cl" autocomplete="email"></div>
-            <div class="field full"><label for="servicios">Servicio principal</label><select id="servicios" name="servicios" required><option value="" selected disabled>Selecciona el servicio que necesitas</option><option value="Página web profesional">Página web profesional</option><option value="Tienda online ecommerce">Tienda online / ecommerce</option><option value="Web corporativa">Web corporativa para empresa</option><option value="Landing page">Landing page de captación</option><option value="Rediseño web">Rediseño de sitio existente</option><option value="Mejoras web">Mejoras web y soporte</option><option value="Hosting y correos">Hosting, dominio y correos corporativos</option><option value="SEO">SEO base y optimización</option><option value="No estoy seguro">No estoy seguro, necesito orientación</option></select></div>
-            <div class="field"><label for="presupuesto">Presupuesto estimado</label><select id="presupuesto" name="presupuesto"><option value="Por definir">Por definir</option><option value="Hasta $150.000">Hasta $150.000</option><option value="$150.000 a $250.000">$150.000 a $250.000</option><option value="$250.000 a $500.000">$250.000 a $500.000</option><option value="Más de $500.000">Más de $500.000</option></select></div>
-            <div class="field"><label for="plazo">Plazo ideal</label><select id="plazo" name="plazo"><option value="Sin urgencia">Sin urgencia</option><option value="Lo antes posible">Lo antes posible</option><option value="1 a 2 semanas">1 a 2 semanas</option><option value="3 a 4 semanas">3 a 4 semanas</option><option value="Más de 1 mes">Más de 1 mes</option></select></div>
-            <div class="field full"><label for="mensaje">Cuéntanos sobre el proyecto</label><textarea id="mensaje" name="mensaje" placeholder="Ej: necesito una página web corporativa con servicios, formulario, WhatsApp, correos, SEO base y posibilidad de agregar tienda online..." required></textarea></div>
-          </div>
-          <div class="submit-row">
-            <button class="btn btn-primary" type="submit">Enviar cotización por correo</button>
-            <button class="btn btn-ghost" type="button" onclick="sendWhatsAppFromForm(this.form)">Continuar por WhatsApp</button>
-          </div>
-          <p class="form-note">Al enviar, la solicitud llega a erwin.2785@gmail.com y contact@activa-web.cl. También puedes continuar por WhatsApp para una respuesta rápida.</p>
-        </form>
-      </div>
-    </section>
 
     <section class="cta">
       <div class="container">
