@@ -28,6 +28,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="logo/logo.png">
   <link rel="preload" as="image" href="imagenes/10.png">
+  <link rel="preload" as="video" href="video/fondo.mov" type="video/quicktime">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
