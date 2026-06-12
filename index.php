@@ -28,6 +28,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="logo/logo.png">
   <link rel="preload" as="image" href="imagenes/10.png">
+  <link rel="preload" as="video" href="video/fondo.mov" type="video/quicktime">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -876,7 +877,9 @@
       display:flex;
       align-items:center;
       overflow:hidden;
-      background:#061a3d;
+      background:
+        linear-gradient(180deg,rgba(6,26,61,.78),rgba(6,26,61,.94)),
+        url('imagenes/10.png') center/cover;
       isolation:isolate;
     }
     .hero-bg-video{
@@ -1079,6 +1082,7 @@
     <section class="hero hero-video" id="inicio" aria-label="Inicio Activa Web desarrollo web en Chile">
       <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="imagenes/10.png" aria-hidden="true">
         <source src="video/fondo.mov" type="video/quicktime">
+        Tu navegador no puede reproducir el video de fondo.
       </video>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-centered">
