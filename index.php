@@ -155,7 +155,7 @@
       </a>
       <nav class="nav-links" aria-label="Menú principal"><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#proceso">Proceso</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></nav>
       <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20ActivaWeb%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">Cotizar</a>
-      <button class="mobile-toggle" type="button" aria-label="Abrir menú" aria-controls="nav" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <button class="mobile-toggle" id="mobile-menu-toggle" type="button" aria-label="Abrir menú" aria-controls="nav" aria-expanded="false">☰</button>
     </div>
   </header>
   <main>
@@ -332,6 +332,36 @@
       ].join('\n');
       window.open('https://wa.me/56952157840?text=' + encodeURIComponent(resumen), '_blank');
     }
+
+    const nav = document.getElementById('nav');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+    function closeMobileMenu(){
+      nav.classList.remove('open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenuToggle.setAttribute('aria-label', 'Abrir menú');
+    }
+
+    function toggleMobileMenu(){
+      const isOpen = nav.classList.toggle('open');
+      mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    }
+
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+    document.addEventListener('click', event => {
+      if (!nav.classList.contains('open') || nav.contains(event.target)) return;
+      closeMobileMenu();
+    });
+
+    document.querySelectorAll('.nav-links a, .nav > .btn').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') closeMobileMenu();
+    });
 
     document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('active')));
   </script>
