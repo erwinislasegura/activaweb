@@ -815,13 +815,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
         <img class="brand-logo" src="logo/logo.png" alt="Activa Web - desarrollo web profesional en Chile" width="1536" height="511" fetchpriority="high">
       </a>
       <nav class="nav-links" aria-label="Menú principal">
-        <a href="#flujo">Proceso</a>
-        <a href="#confianza">Confianza</a>
+        <a href="#planes">Planes</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#servicios">Servicios</a>
-        <a href="#planes">Planes</a>
         <a href="#entregables">Entregables</a>
         <a href="#proceso">Proceso</a>
+        <a href="#flujo">Confianza</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20o%20tienda%20online" target="_blank" rel="noopener">Cotizar web</a>
@@ -838,7 +837,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
           <p class="lead">En Activa Web desarrollamos páginas web, tiendas online y soluciones digitales para empresas en Chile que quieren verse profesionales, explicar mejor su valor y recibir más consultas reales.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener">Quiero una propuesta</a>
-            <a class="btn btn-ghost" href="#portafolio">Ver portafolio</a>
+            <a class="btn btn-ghost" href="#planes">Ver planes</a>
           </div>
           <div class="hero-meta">
             <span>Diseño web profesional</span>
@@ -875,94 +874,89 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
     </div>
 
-    <section class="trust-flow-section" id="flujo">
+
+
+    <section class="section alt" id="planes">
       <div class="container">
-        <div class="trust-flow-wrap">
-          <div class="trust-flow-main">
-            <span class="trust-badge">Activa Web · confianza y proceso</span>
-            <h2>Más que una página web: un proyecto guiado de principio a fin.</h2>
-            <p class="trust-flow-intro">En Activa Web entendemos que una empresa no contrata solo un diseño bonito. Contrata tranquilidad, claridad y respaldo. Por eso guiamos cada proyecto con un proceso ordenado, comunicación cercana y ejecución profesional para avanzar con seguridad desde el primer contacto hasta la publicación.</p>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Planes de desarrollo web</span>
+            <h2>Planes claros para avanzar con seguridad.</h2>
+          </div>
+          <p>Cada plan se presenta con entregables concretos: diseño responsive, administración, SEO base, capacitación, soporte inicial y configuración técnica según el alcance del proyecto.</p>
+        </div>
 
-            <div class="trust-highlight" id="confianza">
-              <p><strong>Lo que el cliente debe sentir:</strong> que Activa Web es una empresa seria de <strong>desarrollo web en Chile</strong>, preparada para tomar su proyecto, ordenar sus ideas y transformarlas en una <strong>página web profesional, tienda online, ecommerce o sitio corporativo</strong> funcional, moderno y confiable.</p>
-            </div>
+        <div class="plans-grid">
+          <article class="plan">
+            <span class="tag">Web informativa</span>
+            <h3>Página web profesional</h3>
+            <p>Ideal para empresas de servicios, profesionales y negocios que necesitan explicar lo que hacen, mostrar confianza y recibir consultas.</p>
+            <div class="price"><del>Antes $220.000</del><strong>$110.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div>
+            <ul><li>Dominio y hosting según alcance</li><li>Diseño responsive</li><li>Web autoadministrable</li><li>Optimización SEO base</li><li>Correos corporativos</li><li>Capacitación inicial</li></ul>
+            <a class="btn btn-ghost" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener">Solicitar propuesta</a>
+          </article>
 
-            <div class="trust-steps">
-              <article class="trust-step">
-                <div class="trust-step-number">01</div>
-                <div>
-                  <h3>Primero entendemos el proyecto</h3>
-                  <p>Antes de cotizar, revisamos el tipo de empresa, sus objetivos, servicios, público y necesidades reales. Así recomendamos con criterio si conviene una web informativa, una tienda online, un ecommerce o una web corporativa más completa.</p>
-                </div>
+          <article class="plan featured">
+            <span class="tag">Tienda online</span>
+            <h3>Ecommerce para vender</h3>
+            <p>Para negocios que quieren vender por internet con catálogo, carrito, pedidos, pagos, envíos configurados y administración propia.</p>
+            <div class="price"><del>Antes $390.000</del><strong>$195.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div>
+            <ul><li>Gestión de productos y pedidos</li><li>Carrito de compras</li><li>Métodos de pago integrados</li><li>Métodos de envío configurados</li><li>App o panel de administración</li><li>Capacitación de uso</li></ul>
+            <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20me%20interesa%20una%20tienda%20online%20ecommerce" target="_blank" rel="noopener">Solicitar ecommerce</a>
+          </article>
+
+          <article class="plan">
+            <span class="tag">Web corporativa</span>
+            <h3>Sitio web para empresa</h3>
+            <p>Para empresas con varias áreas, mayor volumen de contenido, presentación institucional y necesidad de una presencia digital más sólida.</p>
+            <div class="price"><del>Antes $420.000</del><strong>$210.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div>
+            <ul><li>Arquitectura por secciones</li><li>Páginas internas</li><li>Diseño corporativo</li><li>SEO base avanzado</li><li>Correos corporativos</li><li>Soporte inicial</li></ul>
+            <a class="btn btn-ghost" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20me%20interesa%20una%20web%20corporativa" target="_blank" rel="noopener">Solicitar propuesta</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="portafolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Portafolio web</span>
+            <h2>Proyectos reales, distintos rubros, mismo objetivo: confianza.</h2>
+          </div>
+          <p>Una muestra de trabajos desarrollados para servicios profesionales, comercio, construcción, deporte, consultoría, contabilidad y ecommerce.</p>
+        </div>
+        <div class="portfolio-feature" aria-label="Slider de proyectos destacados de Activa Web">
+          <div class="portfolio-slider">
+            <div class="portfolio-track">
+              <article class="portfolio-panel" style="--portfolio-bg:url('portafolio/1.png')">
+                <div><span class="portfolio-kicker">Proyecto destacado</span><h3>Diseños reales para marcas que necesitan vender confianza.</h3><p>Subimos el portafolio para que el visitante vea rápido experiencia, rubros y resultados antes de cotizar.</p></div>
+                <img src="portafolio/1.png" alt="Proyecto destacado AdLinks" loading="lazy">
               </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">02</div>
-                <div>
-                  <h3>Ordenamos estructura, contenido y diseño</h3>
-                  <p>Definimos secciones, mensajes, llamados a la acción, formularios, enfoque comercial e imagen visual. Trabajamos con un diseño sobrio, limpio y corporativo para transmitir profesionalismo, confianza y conversión.</p>
-                </div>
+              <article class="portfolio-panel" style="--portfolio-bg:url('portafolio/5.png')">
+                <div><span class="portfolio-kicker">Ecommerce</span><h3>Tiendas online con enfoque comercial y visual.</h3><p>Catálogo, productos, medios de pago y recorridos pensados para transformar visitas en pedidos.</p></div>
+                <img src="portafolio/5.png" alt="Proyecto ecommerce Palermo Vestidos" loading="lazy">
               </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">03</div>
-                <div>
-                  <h3>Desarrollamos con enfoque profesional y SEO</h3>
-                  <p>Implementamos la web con versión responsive, integración de WhatsApp, formularios, velocidad optimizada, configuración técnica y base SEO para Google, pensando en posicionamiento, experiencia de usuario y confianza comercial.</p>
-                </div>
+              <article class="portfolio-panel" style="--portfolio-bg:url('portafolio/3.png')">
+                <div><span class="portfolio-kicker">Web corporativa</span><h3>Presentaciones profesionales para empresas y servicios.</h3><p>Estructura clara, mensajes directos y contacto visible para que el cliente entienda y consulte.</p></div>
+                <img src="portafolio/3.png" alt="Proyecto corporativo Contreras y Stevens" loading="lazy">
               </article>
-
-              <article class="trust-step">
-                <div class="trust-step-number">04</div>
-                <div>
-                  <h3>Publicamos, capacitamos y acompañamos</h3>
-                  <p>El proyecto no termina al subir la web. Realizamos revisión final, publicación, soporte inicial y capacitación básica para que el cliente pueda administrar lo esencial con tranquilidad y seguridad.</p>
-                </div>
+              <article class="portfolio-panel" style="--portfolio-bg:url('portafolio/8.png')">
+                <div><span class="portfolio-kicker">Venta digital</span><h3>Una imagen digital sólida desde el primer vistazo.</h3><p>Diseño sobrio, responsive y preparado para facilitar la cotización desde cualquier dispositivo.</p></div>
+                <img src="portafolio/8.png" alt="Proyecto ecommerce SURMA" loading="lazy">
               </article>
-            </div>
-
-            <div class="trust-cta">
-              <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20mi%20proyecto%20web" target="_blank" rel="noopener">Quiero cotizar mi proyecto</a>
-              <a class="btn btn-ghost" href="#contacto">Quiero hablar con Activa Web</a>
             </div>
           </div>
-
-          <div class="trust-flow-side">
-            <article class="trust-card dark">
-              <h3>Claridad antes de contratar</h3>
-              <p>Activa Web explica cada etapa de forma simple y directa. El cliente sabe qué recibirá, cómo avanzará el proyecto y quién estará detrás del desarrollo de su web.</p>
-              <ul class="trust-list">
-                <li>Comunicación directa por WhatsApp y correo.</li>
-                <li>Proceso explicado por etapas, sin lenguaje técnico innecesario.</li>
-                <li>Planes claros para páginas web, ecommerce y web corporativa.</li>
-                <li>Diseño profesional orientado a confianza y conversión.</li>
-              </ul>
-            </article>
-
-            <article class="trust-card">
-              <h3>Servicios profesionales de Activa Web en Chile</h3>
-              <p>Desarrollamos soluciones digitales para empresas, emprendedores y marcas que necesitan proyectar seriedad, vender mejor y fortalecer su presencia digital.</p>
-              <div class="trust-services-grid">
-                <div class="trust-service"><b>Diseño y desarrollo web</b><span>Páginas web profesionales, modernas, responsivas y orientadas a confianza.</span></div>
-                <div class="trust-service"><b>Tiendas online y ecommerce</b><span>Catálogo, carrito, pagos, envíos y panel autoadministrable para vender online.</span></div>
-                <div class="trust-service"><b>Web corporativa</b><span>Secciones internas, presentación formal de servicios y estructura comercial sólida.</span></div>
-                <div class="trust-service"><b>SEO base para Google</b><span>Jerarquía de contenidos, metaetiquetas, textos optimizados y estructura técnica inicial.</span></div>
-                <div class="trust-service"><b>Hosting, dominio y correos</b><span>Configuración profesional para operar de forma formal y segura.</span></div>
-                <div class="trust-service"><b>Soporte y acompañamiento</b><span>Revisión final, ajustes, publicación y apoyo inicial para avanzar con seguridad.</span></div>
-              </div>
-            </article>
-
-            <article class="trust-card">
-              <h3>Responsabilidad como empresa de desarrollo web</h3>
-              <ul class="trust-list">
-                <li><strong>Proyecto guiado:</strong> orientación en secciones, contenido, imágenes y objetivos.</li>
-                <li><strong>Imagen corporativa:</strong> diseño sobrio, limpio y profesional para transmitir seriedad.</li>
-                <li><strong>Entrega funcional:</strong> web publicada, responsive, con formularios, WhatsApp y estructura SEO base.</li>
-                <li><strong>Acompañamiento:</strong> ajustes, revisión final y capacitación inicial para usar la web con confianza.</li>
-                <li><strong>Compromiso profesional:</strong> cada proyecto se trabaja con orden, responsabilidad y enfoque comercial.</li>
-              </ul>
-            </article>
-          </div>
+        </div>
+        <div class="portfolio-grid">
+          <article class="work"><a class="work-screen" href="https://adlinks.cl/" target="_blank" rel="noopener"><img src="portafolio/1.png" alt="Página web de marketing digital AdLinks" loading="lazy"></a><div class="work-body"><span>Marketing digital</span><h3>AdLinks</h3><p>Agencia de marketing digital con diseño web, redes sociales, producción audiovisual y posicionamiento SEO para pymes.</p><a class="work-link" href="https://adlinks.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="https://clubossandon.cl/" target="_blank" rel="noopener"><img src="portafolio/2.png" alt="Página web Club Ossandón" loading="lazy"></a><div class="work-body"><span>Club deportivo</span><h3>Club Ossandón</h3><p>Sitio para club deportivo orientado al entrenamiento, tenis, gimnasio, boxeo, bienestar y vida saludable.</p><a class="work-link" href="https://clubossandon.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="https://contrerasystevens.cl/" target="_blank" rel="noopener"><img src="portafolio/3.png" alt="Web corporativa estudio jurídico Contreras y Stevens" loading="lazy"></a><div class="work-body"><span>Estudio jurídico</span><h3>Contreras &amp; Stevens</h3><p>Web de firma legal con estructura corporativa, servicios, equipo profesional y contacto directo para consultas.</p><a class="work-link" href="https://contrerasystevens.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="http://metrikalab.cl/" target="_blank" rel="noopener"><img src="portafolio/4.png" alt="Página web consultora MetrikaLab" loading="lazy"></a><div class="work-body"><span>Consultoría</span><h3>MetrikaLab</h3><p>Consultora estratégica enfocada en transformar datos, tendencias y percepciones en soluciones accionables.</p><a class="work-link" href="http://metrikalab.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="https://palermovestidos.cl/" target="_blank" rel="noopener"><img src="portafolio/5.png" alt="Tienda online Palermo Vestidos" loading="lazy"></a><div class="work-body"><span>Moda y retail</span><h3>Palermo Vestidos</h3><p>Tienda especializada en vestidos de novia, fiesta y gala, con enfoque visual y asesoría personalizada.</p><a class="work-link" href="https://palermovestidos.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="http://panalconstrucciones.cl/" target="_blank" rel="noopener"><img src="portafolio/6.png" alt="Web corporativa Panal Construcciones" loading="lazy"></a><div class="work-body"><span>Construcción</span><h3>Panal Construcciones</h3><p>Empresa constructora con servicios de galpones, viviendas, remodelaciones, obras civiles y estructuras metálicas.</p><a class="work-link" href="http://panalconstrucciones.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="https://solucionemprendedor.cl/" target="_blank" rel="noopener"><img src="portafolio/7.png" alt="Sitio web Solución Emprendedor contabilidad" loading="lazy"></a><div class="work-body"><span>Contabilidad</span><h3>Solución Emprendedor</h3><p>Servicio contable y tributario para emprendedores que necesitan ordenar su gestión financiera.</p><a class="work-link" href="https://solucionemprendedor.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
+          <article class="work"><a class="work-screen" href="https://surma.cl/" target="_blank" rel="noopener"><img src="portafolio/8.png" alt="Ecommerce SURMA tienda online" loading="lazy"></a><div class="work-body"><span>E-commerce</span><h3>SURMA</h3><p>Tienda online de electrodomésticos con enfoque en venta digital, productos y experiencia comercial.</p><a class="work-link" href="https://surma.cl/" target="_blank" rel="noopener">Ver proyecto →</a></div></article>
         </div>
       </div>
     </section>
@@ -1075,46 +1069,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
       </div>
     </section>
 
-    <section class="section alt" id="planes">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">Planes de desarrollo web</span>
-            <h2>Planes claros para avanzar con seguridad.</h2>
-          </div>
-          <p>Cada plan se presenta con entregables concretos: diseño responsive, administración, SEO base, capacitación, soporte inicial y configuración técnica según el alcance del proyecto.</p>
-        </div>
 
-        <div class="plans-grid">
-          <article class="plan">
-            <span class="tag">Web informativa</span>
-            <h3>Página web profesional</h3>
-            <p>Ideal para empresas de servicios, profesionales y negocios que necesitan explicar lo que hacen, mostrar confianza y recibir consultas.</p>
-            <div class="price"><del>Antes $220.000</del><strong>$110.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div>
-            <ul><li>Dominio y hosting según alcance</li><li>Diseño responsive</li><li>Web autoadministrable</li><li>Optimización SEO base</li><li>Correos corporativos</li><li>Capacitación inicial</li></ul>
-            <a class="btn btn-ghost" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20me%20interesa%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener">Solicitar propuesta</a>
-          </article>
-
-          <article class="plan featured">
-            <span class="tag">Tienda online</span>
-            <h3>Ecommerce para vender</h3>
-            <p>Para negocios que quieren vender por internet con catálogo, carrito, pedidos, pagos, envíos configurados y administración propia.</p>
-            <div class="price"><del>Antes $390.000</del><strong>$195.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div>
-            <ul><li>Gestión de productos y pedidos</li><li>Carrito de compras</li><li>Métodos de pago integrados</li><li>Métodos de envío configurados</li><li>App o panel de administración</li><li>Capacitación de uso</li></ul>
-            <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20me%20interesa%20una%20tienda%20online%20ecommerce" target="_blank" rel="noopener">Solicitar ecommerce</a>
-          </article>
-
-          <article class="plan">
-            <span class="tag">Web corporativa</span>
-            <h3>Sitio web para empresa</h3>
-            <p>Para empresas con varias áreas, mayor volumen de contenido, presentación institucional y necesidad de una presencia digital más sólida.</p>
-            <div class="price"><del>Antes $420.000</del><strong>$210.000</strong><small> / pago único</small><span class="discount">50% descuento</span></div>
-            <ul><li>Arquitectura por secciones</li><li>Páginas internas</li><li>Diseño corporativo</li><li>SEO base avanzado</li><li>Correos corporativos</li><li>Soporte inicial</li></ul>
-            <a class="btn btn-ghost" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20me%20interesa%20una%20web%20corporativa" target="_blank" rel="noopener">Solicitar propuesta</a>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section deliverables" id="entregables">
       <div class="container">
@@ -1201,6 +1156,98 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['activa_contact_form']
         <div class="band-card">
           <b>Menos ruido, más conversión</b>
           <span>Jerarquía clara, colores sobrios, botones visibles, textos directos y secciones pensadas para convertir visitas en oportunidades.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-flow-section" id="flujo">
+      <div class="container">
+        <div class="trust-flow-wrap">
+          <div class="trust-flow-main">
+            <span class="trust-badge">Activa Web · confianza y proceso</span>
+            <h2>Más que una página web: un proyecto guiado de principio a fin.</h2>
+            <p class="trust-flow-intro">En Activa Web entendemos que una empresa no contrata solo un diseño bonito. Contrata tranquilidad, claridad y respaldo. Por eso guiamos cada proyecto con un proceso ordenado, comunicación cercana y ejecución profesional para avanzar con seguridad desde el primer contacto hasta la publicación.</p>
+
+            <div class="trust-highlight" id="confianza">
+              <p><strong>Lo que el cliente debe sentir:</strong> que Activa Web es una empresa seria de <strong>desarrollo web en Chile</strong>, preparada para tomar su proyecto, ordenar sus ideas y transformarlas en una <strong>página web profesional, tienda online, ecommerce o sitio corporativo</strong> funcional, moderno y confiable.</p>
+            </div>
+
+            <div class="trust-steps">
+              <article class="trust-step">
+                <div class="trust-step-number">01</div>
+                <div>
+                  <h3>Primero entendemos el proyecto</h3>
+                  <p>Antes de cotizar, revisamos el tipo de empresa, sus objetivos, servicios, público y necesidades reales. Así recomendamos con criterio si conviene una web informativa, una tienda online, un ecommerce o una web corporativa más completa.</p>
+                </div>
+              </article>
+
+              <article class="trust-step">
+                <div class="trust-step-number">02</div>
+                <div>
+                  <h3>Ordenamos estructura, contenido y diseño</h3>
+                  <p>Definimos secciones, mensajes, llamados a la acción, formularios, enfoque comercial e imagen visual. Trabajamos con un diseño sobrio, limpio y corporativo para transmitir profesionalismo, confianza y conversión.</p>
+                </div>
+              </article>
+
+              <article class="trust-step">
+                <div class="trust-step-number">03</div>
+                <div>
+                  <h3>Desarrollamos con enfoque profesional y SEO</h3>
+                  <p>Implementamos la web con versión responsive, integración de WhatsApp, formularios, velocidad optimizada, configuración técnica y base SEO para Google, pensando en posicionamiento, experiencia de usuario y confianza comercial.</p>
+                </div>
+              </article>
+
+              <article class="trust-step">
+                <div class="trust-step-number">04</div>
+                <div>
+                  <h3>Publicamos, capacitamos y acompañamos</h3>
+                  <p>El proyecto no termina al subir la web. Realizamos revisión final, publicación, soporte inicial y capacitación básica para que el cliente pueda administrar lo esencial con tranquilidad y seguridad.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="trust-cta">
+              <a class="btn btn-primary" href="https://wa.me/56952157840?text=Hola%20Activa%20Web%2C%20quiero%20cotizar%20mi%20proyecto%20web" target="_blank" rel="noopener">Quiero cotizar mi proyecto</a>
+              <a class="btn btn-ghost" href="#contacto">Quiero hablar con Activa Web</a>
+            </div>
+          </div>
+
+          <div class="trust-flow-side">
+            <article class="trust-card dark">
+              <h3>Claridad antes de contratar</h3>
+              <p>Activa Web explica cada etapa de forma simple y directa. El cliente sabe qué recibirá, cómo avanzará el proyecto y quién estará detrás del desarrollo de su web.</p>
+              <ul class="trust-list">
+                <li>Comunicación directa por WhatsApp y correo.</li>
+                <li>Proceso explicado por etapas, sin lenguaje técnico innecesario.</li>
+                <li>Planes claros para páginas web, ecommerce y web corporativa.</li>
+                <li>Diseño profesional orientado a confianza y conversión.</li>
+              </ul>
+            </article>
+
+            <article class="trust-card">
+              <h3>Servicios profesionales de Activa Web en Chile</h3>
+              <p>Desarrollamos soluciones digitales para empresas, emprendedores y marcas que necesitan proyectar seriedad, vender mejor y fortalecer su presencia digital.</p>
+              <div class="trust-services-grid">
+                <div class="trust-service"><b>Diseño y desarrollo web</b><span>Páginas web profesionales, modernas, responsivas y orientadas a confianza.</span></div>
+                <div class="trust-service"><b>Tiendas online y ecommerce</b><span>Catálogo, carrito, pagos, envíos y panel autoadministrable para vender online.</span></div>
+                <div class="trust-service"><b>Web corporativa</b><span>Secciones internas, presentación formal de servicios y estructura comercial sólida.</span></div>
+                <div class="trust-service"><b>SEO base para Google</b><span>Jerarquía de contenidos, metaetiquetas, textos optimizados y estructura técnica inicial.</span></div>
+                <div class="trust-service"><b>Hosting, dominio y correos</b><span>Configuración profesional para operar de forma formal y segura.</span></div>
+                <div class="trust-service"><b>Soporte y acompañamiento</b><span>Revisión final, ajustes, publicación y apoyo inicial para avanzar con seguridad.</span></div>
+              </div>
+            </article>
+
+            <article class="trust-card">
+              <h3>Responsabilidad como empresa de desarrollo web</h3>
+              <ul class="trust-list">
+                <li><strong>Proyecto guiado:</strong> orientación en secciones, contenido, imágenes y objetivos.</li>
+                <li><strong>Imagen corporativa:</strong> diseño sobrio, limpio y profesional para transmitir seriedad.</li>
+                <li><strong>Entrega funcional:</strong> web publicada, responsive, con formularios, WhatsApp y estructura SEO base.</li>
+                <li><strong>Acompañamiento:</strong> ajustes, revisión final y capacitación inicial para usar la web con confianza.</li>
+                <li><strong>Compromiso profesional:</strong> cada proyecto se trabaja con orden, responsabilidad y enfoque comercial.</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>
